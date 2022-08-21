@@ -3,6 +3,10 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
+        <div class="text-center">
+            <h1 class="text-3xl text-center">Login</h1>
+            <p class="text-slate-500">Hi, Welcome back 👋</p>
+        </div>
 
         <x-jet-validation-errors class="mb-4" />
 
