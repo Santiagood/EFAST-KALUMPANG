@@ -1,6 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangayOfficials\SMSTemplateController;
+use App\Http\Controllers\BarangayOfficials\ReportGeneratorController;
+use App\Http\Controllers\BarangayOfficials\RiverMonitoringController;
+use App\Http\Controllers\BarangayOfficials\ResidentsAccountController;
+use App\Http\Controllers\BarangayOfficials\SMSDirectMessageController;
+use App\Http\Controllers\Residents\ResidentsRiverMonitoringController;
+use App\Http\Controllers\BarangayOfficials\ManualRegistrationController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +34,23 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+
+Route::group(['middleware' => 'auth'], function() {
+    //Route for Residents
+    Route::group(['middleware' => 'role:Resident', 'prefix' => 'Residents', 'as' => 'Residents.'], function() {
+        Route::resource('RiverMonitoring', ResidentsRiverMonitoringController::class);
+    });
+
+
+    //Route for BarangayOfficials
+    Route::group(['middleware' => 'role:BarangayOfficial', 'prefix' => 'Barangay', 'as' => 'BarangayOfficials.'], function() {
+        Route::resource('RiverMonitoring', RiverMonitoringController::class);
+        Route::resource('ManualRegistration', ManualRegistrationController::class);
+        Route::resource('ReportGenerator', ReportGeneratorController::class);
+        Route::resource('SMSDirectMessage', SMSDirectMessageController::class);
+        Route::resource('SMSTemplate', SMSTemplateController::class);
+        Route::resource('ResidentsAccount', ResidentsAccountController::class);
+    });
 });
