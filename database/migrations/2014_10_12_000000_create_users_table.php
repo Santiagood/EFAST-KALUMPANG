@@ -1,3 +1,4 @@
+-- Active: 1659955358942@@127.0.0.1@3306@efast_kalumpang_capstone
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -20,8 +21,11 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->integer('age');
+            $table->string('gender');
+            $table->string('mobile_number')->unique();
+            $table->text('address');
             $table->timestamps();
         });
     }

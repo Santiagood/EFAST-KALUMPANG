@@ -4,14 +4,14 @@
             <x-jet-authentication-card-logo />
         </x-slot>
         <div class="text-center">
-            <h1 class="text-3xl text-center">Login</h1>
-            <p class="text-slate-500">Hi, Welcome back 👋</p>
+            <h1 class="text-3xl font-bold text-center">Login</h1>
+            <h3 class="text-lg font-semibold text-center">Hi, Welcome back 👋</h1>
         </div>
 
-        <x-jet-validation-errors class="mb-4" />
+        <x-jet-validation-errors class="mt-2 mb-4" />
 
         @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
+            <div class="mt-2 mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
             </div>
         @endif
@@ -21,12 +21,12 @@
 
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" placeholder="José_Rizal@gmail.com" required autofocus />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required placeholder="YouWontGuessThisOne" autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
