@@ -2,7 +2,7 @@
 
 @section('contents')
 
-<section class="text-gray-600 body-font bg-gradient-to-r from-blue-300 via-yellow to-red-300">
+<section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col flex-wrap items-center w-full mb-20 text-center">
         <h1 class="mb-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font">Welcome to EFAST-Kalumpang</h1>
@@ -56,7 +56,7 @@
             <p class="text-base leading-relaxed">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
           </div>
         </div>
-        <div class="p-4 xl:w-1/3 md:w-1/2 bg-indigo-500 ">
+        <div class="p-4 xl:w-1/3 md:w-1/2 ">
           <div class="p-6 border border-gray-200 rounded-lg">
             <div class="inline-flex items-center justify-center w-10 h-10 mb-4 text-indigo-500 bg-indigo-100 rounded-full">
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
@@ -86,67 +86,67 @@
 
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
-      <div class="text-center mb-20">
-        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Raw Denim Heirloom Man Braid</h1>
-        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
+      <div class="mb-20 text-center">
+        <h1 class="mb-4 text-2xl font-medium text-center text-gray-900 sm:text-3xl title-font">Raw Denim Heirloom Man Braid</h1>
+        <p class="mx-auto text-base leading-relaxed xl:w-2/4 lg:w-3/4">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
       </div>
-      <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+      <div class="flex flex-wrap -mx-2 lg:w-4/5 sm:mx-auto sm:mb-2">
+        <div class="w-full p-2 sm:w-1/2">
+          <div class="flex items-center h-full p-4 bg-gray-100 rounded">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="flex-shrink-0 w-6 h-6 mr-4 text-indigo-500" viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Authentic Cliche Forage</span>
+            <span class="font-medium title-font">Authentic Cliche Forage</span>
           </div>
         </div>
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+        <div class="w-full p-2 sm:w-1/2">
+          <div class="flex items-center h-full p-4 bg-gray-100 rounded">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="flex-shrink-0 w-6 h-6 mr-4 text-indigo-500" viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Kinfolk Chips Snackwave</span>
+            <span class="font-medium title-font">Kinfolk Chips Snackwave</span>
           </div>
         </div>
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+        <div class="w-full p-2 sm:w-1/2">
+          <div class="flex items-center h-full p-4 bg-gray-100 rounded">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="flex-shrink-0 w-6 h-6 mr-4 text-indigo-500" viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Coloring Book Ethical</span>
+            <span class="font-medium title-font">Coloring Book Ethical</span>
           </div>
         </div>
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+        <div class="w-full p-2 sm:w-1/2">
+          <div class="flex items-center h-full p-4 bg-gray-100 rounded">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="flex-shrink-0 w-6 h-6 mr-4 text-indigo-500" viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Typewriter Polaroid Cray</span>
+            <span class="font-medium title-font">Typewriter Polaroid Cray</span>
           </div>
         </div>
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+        <div class="w-full p-2 sm:w-1/2">
+          <div class="flex items-center h-full p-4 bg-gray-100 rounded">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="flex-shrink-0 w-6 h-6 mr-4 text-indigo-500" viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">Pack Truffaut Blue</span>
+            <span class="font-medium title-font">Pack Truffaut Blue</span>
           </div>
         </div>
-        <div class="p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+        <div class="w-full p-2 sm:w-1/2">
+          <div class="flex items-center h-full p-4 bg-gray-100 rounded">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="flex-shrink-0 w-6 h-6 mr-4 text-indigo-500" viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
               <path d="M22 4L12 14.01l-3-3"></path>
             </svg>
-            <span class="title-font font-medium">The Catcher In The Rye</span>
+            <span class="font-medium title-font">The Catcher In The Rye</span>
           </div>
         </div>
       </div>
-      <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+      <button class="flex px-8 py-2 mx-auto mt-16 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">Button</button>
     </div>
   </section>
 

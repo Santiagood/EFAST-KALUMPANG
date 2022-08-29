@@ -5,7 +5,7 @@
 <section class="relative text-gray-600 body-font">
     <div class="container flex flex-wrap px-5 py-24 mx-auto sm:flex-nowrap">
       <div class="relative flex items-end justify-start p-10 overflow-hidden bg-gray-300 rounded-lg lg:w-2/3 md:w-1/2 sm:mr-10">
-        <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+        <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d302.58038389969715!2d121.09320687372046!3d14.62416585760694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b83a8b8dde27%3A0x89352c802f0171c2!2sKalumpang%20Barangay%20Hall!5e1!3m2!1sen!2sph!4v1661795455827!5m2!1sen!2sph" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
         <div class="relative flex flex-wrap py-6 bg-white rounded shadow-md">
           <div class="px-6 lg:w-1/2">
             <h2 class="text-xs font-semibold tracking-widest text-gray-900 title-font">ADDRESS</h2>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col w-full mt-8 bg-white lg:w-1/3 md:w-1/2 md:ml-auto md:py-8 md:mt-0">
+      <div class="flex flex-col w-full p-10 mt-8 bg-white rounded-lg lg:w-1/3 md:w-1/2 md:ml-auto md:py-8 md:mt-0">
         <h2 class="mb-1 text-lg font-medium text-gray-900 title-font">Feedback</h2>
         <p class="mb-5 leading-relaxed text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
         <div class="relative mb-4">

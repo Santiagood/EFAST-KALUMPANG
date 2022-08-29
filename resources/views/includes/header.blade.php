@@ -35,44 +35,28 @@
             </li>
           </ul>
         </nav>
-
         <div class="flex items-center gap-4">
-          <div class="sm:gap-4 sm:flex">
-            <a
-              class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 transition rounded-md shadow"
-              href="{{ route('login') }}"
-            >
-              Login
-            </a>
-
-            <a
-              class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-gray-800 rounded-md hover:text-white/75 transition"
-              href="{{ route('register') }}"
-
-            >
-              Register
-            </a>
-          </div>
-
-          {{-- <button
-            class="block p-2.5 text-white bg-gray-800 rounded md:hidden hover:text-white/75 transition"
-          >
-            <span class="sr-only">Toggle menu</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button> --}}
+            <div class="sm:gap-4 sm:flex">
+            @if (Route::has('login'))
+                @auth
+                    <a class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 transition rounded-md shadow"
+                    href="{{ url('/dashboard') }}">
+                    Dashboard
+                    </a>
+                @else
+                    <a class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 transition rounded-md shadow"
+                    href="{{ route('login') }}">
+                    Login
+                    </a>
+                    @if (Route::has('register'))
+                        <a class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-gray-800 rounded-md hover:text-white/75 transition"
+                        href="{{ route('register') }}">
+                        Register
+                        </a>
+                    @endif
+                @endauth
+            @endif
+            </div>
         </div>
       </div>
     </div>
