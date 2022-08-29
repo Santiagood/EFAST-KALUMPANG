@@ -22,9 +22,25 @@ use App\Http\Controllers\BarangayOfficials\ManualRegistrationController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('homepage');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontpage.home');
 })->name('homepage');
+
+Route::get('/about-us', function () {
+    return view('frontpage.about-us');
+})->name('about-us');
+
+Route::get('/contact-us', function () {
+    return view('frontpage.contact-us');
+})->name('contact-us');
+
+Route::get('/system-feature', function () {
+    return view('frontpage.system-feature');
+})->name('system-feature');
 
 Route::middleware([
     'auth:sanctum',
@@ -37,12 +53,11 @@ Route::middleware([
 });
 
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function() {
     //Route for Residents
     Route::group(['middleware' => 'role:Resident', 'prefix' => 'Residents', 'as' => 'Residents.'], function() {
         Route::resource('RiverMonitoring', ResidentsRiverMonitoringController::class);
     });
-
 
     //Route for BarangayOfficials
     Route::group(['middleware' => 'role:BarangayOfficial', 'prefix' => 'Barangay', 'as' => 'BarangayOfficials.'], function() {

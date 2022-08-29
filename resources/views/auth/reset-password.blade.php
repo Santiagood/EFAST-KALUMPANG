@@ -3,7 +3,20 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
+        <div class="text-center content-center m-2">
 
+            <h1 class="text-2xl font-bold text-center">Reset Password</h1>
+            <div class="shadow-2xl rounded-lg p-5 my-4 border border-red-600">
+                <h5 class="text-sm font-semibold text-justify mb-2 ">For your password to be up to the latest security standards, please make sure to consider
+                    the following aspects when creating your password:
+                </h5>
+                <ul class="text-sm none text-justify">
+                    <li>✔ The password should consists of a minimum of 8 characters</li>
+                    <li>✔ It should include capital and lower letters, as well as at least one special character</li>
+                    <li>✔ Please make sure not to use this password with other account</li>
+                </ul>
+            </div>
+        </div>
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('password.update') }}">

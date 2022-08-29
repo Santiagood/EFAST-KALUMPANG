@@ -81,6 +81,21 @@
                 @endif
             @endif
         </div>
+
+        <!-- mobile number -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="mobile_number" value="{{ __('Mobile Number') }}" />
+            <x-jet-input id="mobile_number" type="number" class="mt-1 block w-full" wire:model.defer="state.mobile_number" autocomplete="mobile_number" />
+            <x-jet-input-error for="mobile_number" class="mt-2" />
+        </div>
+
+        <!-- address -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="address" value="{{ __('Address') }}" />
+            <x-jet-input id="address" type="text" class="mt-1 block w-full" wire:model.defer="state.address" autocomplete="address" />
+            <x-jet-input-error for="address" class="mt-2" />
+        </div>
+
     </x-slot>
 
     <x-slot name="actions">

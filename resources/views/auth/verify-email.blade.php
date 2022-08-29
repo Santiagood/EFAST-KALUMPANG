@@ -3,6 +3,10 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
+        <div class="text-center my-4">
+            <h1 class="text-lg font-bold text-center">Please verify your email to continue </h1>
+            <h1 class="text-lg font-bold text-center">using your EFAST account </h1>
+        </div>
 
         <div class="mb-4 text-sm text-gray-600">
             {{ __('Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}

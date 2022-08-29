@@ -19,13 +19,13 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gradient-to-b from-transparent to-sky-600">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="bg-white shadow rounded-b-3xl">
+                    <div class="px-4 py-3 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
