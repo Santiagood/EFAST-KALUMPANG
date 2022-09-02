@@ -16,11 +16,11 @@
               </a>
             </li>
 
-            <li>
+            {{-- <li>
               <a class="text-white transition hover:text-white/75" href="{{ route('system-feature') }}">
                 System Features
               </a>
-            </li>
+            </li> --}}
 
             <li>
               <a class="text-white transition hover:text-white/75" href="{{ route('about-us') }}">
@@ -28,11 +28,11 @@
               </a>
             </li>
 
-            <li>
+            {{-- <li>
               <a class="text-white transition hover:text-white/75" href="{{ route('contact-us') }}">
                 Contact Us
               </a>
-            </li>
+            </li> --}}
           </ul>
         </nav>
         <div class="flex items-center gap-4">
