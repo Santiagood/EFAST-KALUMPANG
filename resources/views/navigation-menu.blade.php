@@ -26,10 +26,6 @@
                             {{ __('Report Generator') }}
                         </x-jet-nav-link>
 
-                        {{-- <x-jet-nav-link href="{{ route('BarangayOfficials.ManualRegistration.index') }}" :active="request()->routeIs('BarangayOfficials.ManualRegistration.index')">
-                            {{ __('Manual Registration') }}
-                        </x-jet-nav-link> --}}
-
                         <x-jet-nav-link href="{{ route('BarangayOfficials.ResidentsAccount.index') }}" :active="request()->routeIs('BarangayOfficials.ResidentsAccount.index')">
                             {{ __('Manage EFAST Accounts') }}
                         </x-jet-nav-link>
@@ -37,11 +33,6 @@
                         <x-jet-nav-link href="{{ route('BarangayOfficials.SMSTemplate.index') }}" :active="request()->routeIs('BarangayOfficials.SMSTemplate.index')">
                             {{ __('Manage SMS') }}
                         </x-jet-nav-link>
-
-                        {{-- <x-jet-nav-link href="{{ route('BarangayOfficials.SMSDirectMessage.index') }}" :active="request()->routeIs('BarangayOfficials.SMSDirectMessage.index')">
-                            {{ __('SMS Direct Message') }}
-                        </x-jet-nav-link> --}}
-
 
                     @endif
 
@@ -177,6 +168,25 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+
+            @if (auth()->user()->roles_id == 1)
+                <x-jet-responsive-nav-link href="{{ route('BarangayOfficials.RiverMonitoring.index') }}" :active="request()->routeIs('BarangayOfficials.RiverMonitoring.index')">
+                    {{ __('Barangay River Monitoring') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('BarangayOfficials.ReportGenerator.index') }}" :active="request()->routeIs('BarangayOfficials.ReportGenerator.index')">
+                    {{ __('Report Generator') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('BarangayOfficials.ResidentsAccount.index') }}" :active="request()->routeIs('BarangayOfficials.ResidentsAccount.index')">
+                    {{ __('Manage EFAST Accounts') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('BarangayOfficials.SMSTemplate.index') }}" :active="request()->routeIs('BarangayOfficials.SMSTemplate.index')">
+                    {{ __('Manage SMS') }}
+                </x-jet-responsive-nav-link>
+            @elseif (auth()->user()->roles_id == 2)
+                <x-jet-responsive-nav-link href="{{ route('Residents.RiverMonitoring.index') }}" :active="request()->routeIs('Residents.RiverMonitoring.index')">
+                    {{ __('Residents River Monitoring') }}
+                </x-jet-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

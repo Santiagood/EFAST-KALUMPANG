@@ -19,7 +19,8 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gradient-to-b from-transparent to-sky-600">
+        {{-- <div class="min-h-screen bg-gradient-to-b from-transparent to-sky-600"> --}}
+        <div class="min-w-full min-h-screen bg-fixed bg-no-repeat bg-cover" style="background-image: url('{{ asset('/images/EFAST-Wallpaper.jpg') }}');">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->

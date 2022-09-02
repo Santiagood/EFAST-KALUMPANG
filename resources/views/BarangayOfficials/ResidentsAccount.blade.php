@@ -7,10 +7,12 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
-                {{-- <x-jet-welcome /> --}}
-                Hello {{ auth()->user()->name}}
+            <div class="p-10 overflow-hidden bg-white shadow-xl sm:rounded-lg">
+                EFAST ACCOUNT DATATABLE - CREATE/ REGISTER NEW ACCOUNT, DISPLAY TABLE, UPDATE ACCOUNT ROLE, DELETE ACCOUNT,
+                SEARCH - EMAIL, NAME, MOBILE NUMBER
+                FILTERS - USER ROLE
             </div>
+            <x-jet-section-border />
         </div>
     </div>
 </x-app-layout>

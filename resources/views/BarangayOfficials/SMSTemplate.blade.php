@@ -7,10 +7,18 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
-                {{-- <x-jet-welcome /> --}}
-                Hello {{ auth()->user()->name}}
+            <div class="p-10 overflow-hidden bg-white shadow-xl sm:rounded-lg">
+                SEND SMS TO RESIDENTS
+            </div>
+            <x-jet-section-border />
+            <div class="p-10 overflow-hidden bg-white shadow-xl sm:rounded-lg">
+                SENT MESSAGE LOG
+            </div>
+            <x-jet-section-border />
+            <div class="p-10 overflow-hidden bg-white shadow-xl sm:rounded-lg">
+                SMS TEMPLATE CREATOR
             </div>
         </div>
+
     </div>
 </x-app-layout>

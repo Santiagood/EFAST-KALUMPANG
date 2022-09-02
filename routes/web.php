@@ -51,16 +51,34 @@ Route::middleware([
 Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function() {
     //Route for Residents
     Route::group(['middleware' => 'role:Resident', 'prefix' => 'Residents', 'as' => 'Residents.'], function() {
-        Route::resource('RiverMonitoring', ResidentsRiverMonitoringController::class);
+        // Route::resource('RiverMonitoring', ResidentsRiverMonitoringController::class);
+
+        // ResidentsRiverMonitoringControllers
+        route::get('/River-Monitoring', [ResidentsRiverMonitoringController::class, 'index'])->name('RiverMonitoring.index');
     });
 
     //Route for BarangayOfficials
     Route::group(['middleware' => 'role:BarangayOfficial', 'prefix' => 'Barangay', 'as' => 'BarangayOfficials.'], function() {
-        Route::resource('RiverMonitoring', RiverMonitoringController::class);
-        // Route::resource('ManualRegistration', ManualRegistrationController::class);
-        Route::resource('ReportGenerator', ReportGeneratorController::class);
-        // Route::resource('SMSDirectMessage', SMSDirectMessageController::class);
-        Route::resource('SMSTemplate', SMSTemplateController::class);
-        Route::resource('ResidentsAccount', ResidentsAccountController::class);
+        // Route::resource('RiverMonitoring', RiverMonitoringController::class);
+        // Route::resource('ReportGenerator', ReportGeneratorController::class);
+        // Route::resource('ResidentsAccount', ResidentsAccountController::class);
+        // Route::resource('SMSTemplate', SMSTemplateController::class);
+
+
+        // SMSTemplateControllers
+        route::get('/Manage-SMS', [SMSTemplateController::class, 'index'])->name('SMSTemplate.index');
+
+
+        // ResidentsAccountControllers
+        route::get('/Manage-EFAST-Account', [ResidentsAccountController::class, 'index'])->name('ResidentsAccount.index');
+
+
+        // ReportGeneratorControllers
+        route::get('/Report-Generator', [ReportGeneratorController::class, 'index'])->name('ReportGenerator.index');
+
+
+        // RiverMonitoringControllers
+        route::get('/River-Monitoring', [RiverMonitoringController::class, 'index'])->name('RiverMonitoring.index');
+
     });
 });
