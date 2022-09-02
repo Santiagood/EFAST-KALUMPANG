@@ -26,21 +26,23 @@
                             {{ __('Report Generator') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('BarangayOfficials.ManualRegistration.index') }}" :active="request()->routeIs('BarangayOfficials.ManualRegistration.index')">
+                        {{-- <x-jet-nav-link href="{{ route('BarangayOfficials.ManualRegistration.index') }}" :active="request()->routeIs('BarangayOfficials.ManualRegistration.index')">
                             {{ __('Manual Registration') }}
+                        </x-jet-nav-link> --}}
+
+                        <x-jet-nav-link href="{{ route('BarangayOfficials.ResidentsAccount.index') }}" :active="request()->routeIs('BarangayOfficials.ResidentsAccount.index')">
+                            {{ __('Manage EFAST Accounts') }}
                         </x-jet-nav-link>
 
                         <x-jet-nav-link href="{{ route('BarangayOfficials.SMSTemplate.index') }}" :active="request()->routeIs('BarangayOfficials.SMSTemplate.index')">
-                            {{ __('SMS Template Creator') }}
+                            {{ __('Manage SMS') }}
                         </x-jet-nav-link>
 
-                        <x-jet-nav-link href="{{ route('BarangayOfficials.SMSDirectMessage.index') }}" :active="request()->routeIs('BarangayOfficials.SMSDirectMessage.index')">
+                        {{-- <x-jet-nav-link href="{{ route('BarangayOfficials.SMSDirectMessage.index') }}" :active="request()->routeIs('BarangayOfficials.SMSDirectMessage.index')">
                             {{ __('SMS Direct Message') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link> --}}
 
-                        <x-jet-nav-link href="{{ route('BarangayOfficials.ResidentsAccount.index') }}" :active="request()->routeIs('BarangayOfficials.ResidentsAccount.index')">
-                            {{ __('Residents Account Control') }}
-                        </x-jet-nav-link>
+
                     @endif
 
 

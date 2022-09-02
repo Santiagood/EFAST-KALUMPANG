@@ -5,9 +5,8 @@ use App\Http\Controllers\BarangayOfficials\SMSTemplateController;
 use App\Http\Controllers\BarangayOfficials\ReportGeneratorController;
 use App\Http\Controllers\BarangayOfficials\RiverMonitoringController;
 use App\Http\Controllers\BarangayOfficials\ResidentsAccountController;
-use App\Http\Controllers\BarangayOfficials\SMSDirectMessageController;
 use App\Http\Controllers\Residents\ResidentsRiverMonitoringController;
-use App\Http\Controllers\BarangayOfficials\ManualRegistrationController;
+
 
 
 
@@ -38,14 +37,6 @@ Route::get('/about-us', function () {
     return view('frontpage.about-us');
 })->name('about-us');
 
-Route::get('/contact-us', function () {
-    return view('frontpage.contact-us');
-})->name('contact-us');
-
-Route::get('/system-feature', function () {
-    return view('frontpage.system-feature');
-})->name('system-feature');
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -66,9 +57,9 @@ Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function() {
     //Route for BarangayOfficials
     Route::group(['middleware' => 'role:BarangayOfficial', 'prefix' => 'Barangay', 'as' => 'BarangayOfficials.'], function() {
         Route::resource('RiverMonitoring', RiverMonitoringController::class);
-        Route::resource('ManualRegistration', ManualRegistrationController::class);
+        // Route::resource('ManualRegistration', ManualRegistrationController::class);
         Route::resource('ReportGenerator', ReportGeneratorController::class);
-        Route::resource('SMSDirectMessage', SMSDirectMessageController::class);
+        // Route::resource('SMSDirectMessage', SMSDirectMessageController::class);
         Route::resource('SMSTemplate', SMSTemplateController::class);
         Route::resource('ResidentsAccount', ResidentsAccountController::class);
     });
