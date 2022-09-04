@@ -48,7 +48,7 @@ Route::middleware([
 });
 
 
-Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function() {
+Route::group(['middleware' => ['auth', 'verified']], function() {
     //Route for Residents
     Route::group(['middleware' => 'role:Resident', 'prefix' => 'Residents', 'as' => 'Residents.'], function() {
         // Route::resource('RiverMonitoring', ResidentsRiverMonitoringController::class);

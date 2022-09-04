@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('SMS Template Creator & Send SMS to Residents') }}
+            {{ __('Manage SMS') }}
         </h2>
     </x-slot>
 
@@ -15,8 +15,10 @@
                 SENT MESSAGE LOG
             </div>
             <x-jet-section-border />
-            <div class="p-10 overflow-hidden bg-white shadow-xl sm:rounded-lg">
-                SMS TEMPLATE CREATOR
+            <div class="p-5 overflow-hidden bg-white shadow-xl sm:rounded-lg">
+                <div class="pb-2">
+                    @livewire('sms-template-creator')
+                </div>
             </div>
         </div>
 
