@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangayOfficials\ItexMoController;
 use App\Http\Controllers\BarangayOfficials\SMSTemplateController;
 use App\Http\Controllers\BarangayOfficials\ReportGeneratorController;
 use App\Http\Controllers\BarangayOfficials\RiverMonitoringController;
@@ -80,5 +81,8 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
         // RiverMonitoringControllers
         route::get('/River-Monitoring', [RiverMonitoringController::class, 'index'])->name('RiverMonitoring.index');
 
+
+        // route::post('/send',[ItexMoController::class, 'sendSMS'])->name('sendItexmo');
+        Route::post('/send',[ItexMoController::class, 'sendSMS'])->name('SendItexmo.sendSMS');
     });
 });

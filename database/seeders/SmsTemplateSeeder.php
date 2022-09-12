@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use Database\Seeders\SmsTemplateSeeder;
 use App\Models\smsTemplate;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

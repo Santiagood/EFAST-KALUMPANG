@@ -56,7 +56,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => $input['name'],
             'email' => $input['email'],
             'mobile_number' => $input['mobile_number'],
-            'addres' => $input['address'],
+            'address' => $input['address'],
             'email_verified_at' => null,
         ])->save();
 

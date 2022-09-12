@@ -7,12 +7,9 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="p-10 overflow-hidden bg-white shadow-xl sm:rounded-lg">
-                EFAST ACCOUNT DATATABLE - CREATE/ REGISTER NEW ACCOUNT, DISPLAY TABLE, UPDATE ACCOUNT ROLE, DELETE ACCOUNT,
-                SEARCH - EMAIL, NAME, MOBILE NUMBER
-                FILTERS - USER ROLE
+            <div class="p-2 overflow-hidden hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
+                @livewire('efast-account-creator')
             </div>
-            <x-jet-section-border />
         </div>
     </div>
 </x-app-layout>

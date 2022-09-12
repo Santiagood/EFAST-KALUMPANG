@@ -23,23 +23,27 @@
                     <x-jet-input id="mobile_number" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="mobile_number" :value="old('mobile_number')" placeholder="09171234567" required />
                 </div>
 
-                <div class="mx-auto my-1 col-span-2 w-full">
-                    <x-jet-label for="address" value="{{ __('Address') }}" />
-                    <x-jet-input id="address" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="address" :value="old('address')" placeholder="M.H Del Pilar Street, Kalumpang" required />
-                </div>
-
-
-                <div class="mx-auto my-1 w-full">
-                    <x-jet-label for="age" value="{{ __('Age') }}" />
-                    <x-jet-input id="age" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="age" :value="old('age')" placeholder="30" required />
-                </div>
-
                 <div class="mx-auto my-1 w-full">
                     <x-jet-label for="gender" value="{{ __('Gender') }}" />
                     <select id="gender" name="gender" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                         <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="mx-auto my-1 w-full">
+                    <x-jet-label for="age" value="{{ __('Age') }}" />
+                    <x-jet-input id="age" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="age" :value="old('age')" placeholder="30" required />
+                </div>
+
+                <div class="mx-auto my-1 col-span-2 w-full">
+                    <x-jet-label for="address" value="{{ __('Address') }}" />
+                    <select id="address" name="address" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="">Select Street</option>
+                        @foreach (\App\Models\KalumpangStreet::all(); as $street)
+                            <option value="{{ $street->Street_name }}">{{ $street->Street_name }}</option>
+                        @endforeach
                     </select>
                 </div>
 
