@@ -26,7 +26,7 @@
                     Resident Number
                 </th>
                 <th scope="col" class="px-2 py-2 text-center">
-                    Resident Age
+                    Resident Birthday
                 </th>
                 <th scope="col" class="px-2 py-2 text-center">
                     Resident Gender
@@ -35,7 +35,10 @@
                     Resident Address
                 </th>
                 <th scope="col" class="px-2 py-2 text-center">
-                    Resident Created at
+                    Registered as
+                </th>
+                <th scope="col" class="px-2 py-2 text-center">
+                    Created At
                 </th>
                 <th scope="col" class="px-2 py-2 text-center">
                     Resident Roles ID
@@ -54,8 +57,8 @@
                         </td>
                         <td class="px-2 py-2 text-center">
                             @if ($Account -> email == null)
-                                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-gray-600 bg-gray-200 uppercase last:mr-0 mr-1">
-                                    Account created manually
+                                <span class="inline-block px-2 py-1 py-2 mr-1 text-xs font-semibold text-gray-600 uppercase bg-gray-200 rounded-full last:mr-0">
+                                    created manually
                                 </span>
                             @else
                                 {{ $Account -> email }}
@@ -65,7 +68,7 @@
                             {{ $Account -> mobile_number}}
                         </td>
                         <td class="px-2 py-2 text-center">
-                            {{ $Account -> age}}
+                            {{ $Account -> birthday}}
                         </td>
                         <td class="px-2 py-2 text-center">
                             {{ $Account -> gender }}
@@ -74,20 +77,23 @@
                             {{ $Account -> address }}
                         </td>
                         <td class="px-2 py-2 text-center">
+                            {{ $Account -> registerMeAs }}
+                        </td>
+                        <td class="px-2 py-2 text-center">
                             {{ $Account -> created_at }}
                         </td>
                         <td class="px-2 py-2 text-center">
                             @if ( $Account -> roles_id == 1)
-                                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-blue-600 bg-blue-200  last:mr-0 mr-1">
+                                <span class="inline-block px-2 py-1 mr-1 text-xs font-semibold text-blue-600 uppercase bg-blue-200 rounded last:mr-0">
                                     Barangay Official
                                 </span>
                             @elseif($Account -> roles_id == 2)
-                                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-yellow-600 bg-yellow-200  last:mr-0 mr-1">
+                                <span class="inline-block px-2 py-1 mr-1 text-xs font-semibold text-yellow-600 uppercase bg-yellow-200 rounded last:mr-0">
                                     Resident Account
                                 </span>
                             @endif
                         </td>
-                        <td class="px-2 py-2 md:whitespace-nowrap text-center">
+                        <td class="px-2 py-2 text-center md:whitespace-nowrap">
                             <button wire:click='updateShowModal( {{ $Account -> id }})' type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                                 {{ __('Update') }}
                             </button>
@@ -122,7 +128,7 @@
         </x-slot>
 
         <x-slot name="content">
-            <div class="grid grid-cols-2 grid-flow-row-dense gap-2">
+            <div class="grid grid-flow-row-dense grid-cols-2 gap-2">
                 <div class="mt-4">
                     <x-jet-label for="Residents_Name" value="{{ __('Resident Name') }}" />
                     <x-jet-input id="Residents_Name" class="block w-full mt-1" type="text" wire:model.debounce.800ms="Residents_Name" required placeholder="José Rizal"/>
@@ -136,14 +142,27 @@
                 </div>
 
                 <div class="mt-4">
-                    <x-jet-label for="Residents_Age" value="{{ __('Resident Age') }}" />
+                    {{-- <x-jet-label for="Residents_Age" value="{{ __('Resident Age') }}" />
                     <x-jet-input id="Residents_Age" class="block w-full mt-1" type="number" wire:model.debounce.800ms="Residents_Age" required placeholder="30"/>
-                    @error('Residents_Age')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+                    @error('Residents_Age')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror --}}
+                    <x-jet-label for="Residents_Birthday" value="{{ __('Resident Birthday') }}" />
+                    <x-jet-input wire:model.debounce.800ms="Residents_Birthday" id="Residents_Birthday" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date"  required />
+                    @error('Residents_Birthday')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+                </div>
+
+                <div class="mt-4">
+                    <x-jet-label for="Residents_Roles_ID" value="{{ __('Resident Role') }}" />
+                    <select id="Residents_Roles_ID" wire:model.debounce.800ms="Residents_Roles_ID" name="Residents_Roles_ID" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                        <option value="">Select Role</option>
+                        <option value="" disabled>BarangayOfficial</option>
+                        <option value="2">Resident</option>
+                    </select>
+                    @error('Residents_Roles_ID')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
                 </div>
 
                 <div class="mt-4">
                     <x-jet-label for="Residents_Gender" value="{{ __('Resident Gender') }}" />
-                    <select id="Residents_Gender" type="text" wire:model.debounce.800ms="Residents_Gender" name="Residents_Gender" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                    <select id="Residents_Gender" type="text" wire:model.debounce.800ms="Residents_Gender" name="Residents_Gender" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
                         <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -151,25 +170,26 @@
                     @error('Residents_Gender')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
                 </div>
 
+                <div class="row-span-2 mt-4">
+                    <x-jet-label for="Residents_registerMeAs" value="{{ __('Resident Register as') }}" />
+                    <select id="Residents_registerMeAs" wire:model.debounce.800ms="Residents_registerMeAs" name="Residents_registerMeAs" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                        <option value="N/A">Select</option>
+                        <option value="Person with disability">Person with disability</option>
+                        <option value="Elderly">Elderly</option>
+                        <option value="LGBTQ">LGBTQ</option>
+                    </select>
+                    @error('Residents_Roles_ID')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+                </div>
+
                 <div class="mt-4">
                     <x-jet-label for="Residents_Address" value="{{ __('Resident Address') }}" />
-                    <select id="Residents_Address" wire:model.debounce.800ms="Residents_Address" name="Residents_Address" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                    <select id="Residents_Address" wire:model.debounce.800ms="Residents_Address" name="Residents_Address" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                         <option value="">Select Street</option>
                         @foreach (\App\Models\KalumpangStreet::all(); as $street)
                             <option value="{{ $street->Street_name }}">{{ $street->Street_name }}</option>
                         @endforeach
                     </select>
                     @error('Residents_Address')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
-                </div>
-
-                <div class="mt-4">
-                    <x-jet-label for="Residents_Roles_ID" value="{{ __('Resident Role') }}" />
-                    <select id="Residents_Roles_ID" wire:model.debounce.800ms="Residents_Roles_ID" name="Residents_Roles_ID" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
-                        <option value="">Select Role</option>
-                        <option value="" disabled>BarangayOfficial</option>
-                        <option value="2">Resident</option>
-                    </select>
-                    @error('Residents_Roles_ID')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
                 </div>
             </div>
         </x-slot>
@@ -208,7 +228,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="Residents_Address" value="{{ __('Resident Address') }}" />
-                <select id="Residents_Address" wire:model.debounce.800ms="Residents_Address" name="Residents_Address" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                <select id="Residents_Address" wire:model.debounce.800ms="Residents_Address" name="Residents_Address" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
                     <option value="">Select Street</option>
                     @foreach (\App\Models\KalumpangStreet::all(); as $street)
                         <option value="{{ $street->Street_name }}">{{ $street->Street_name }}</option>
@@ -219,7 +239,7 @@
             @if ($Residents_Email != null)
                 <div class="mt-4">
                     <x-jet-label for="Residents_Roles_ID" value="{{ __('Resident Role') }}" />
-                    <select id="Residents_Roles_ID" wire:model.debounce.800ms="Residents_Roles_ID" name="Residents_Roles_ID" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                    <select id="Residents_Roles_ID" wire:model.debounce.800ms="Residents_Roles_ID" name="Residents_Roles_ID" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
                         <option value="">Select Role</option>
                         @foreach (\App\Models\Role::all() as $resident_role)
                             <option value="{{ $resident_role->id }}">{{ $resident_role->role }}</option>

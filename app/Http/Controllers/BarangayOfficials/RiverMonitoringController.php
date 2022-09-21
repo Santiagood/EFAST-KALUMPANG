@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\BarangayOfficials;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RiverMonitoringController extends Controller
 {

@@ -7,13 +7,14 @@
     "require": {
         "php": "^8.0.2",
         "arielmejiadev/larapex-charts": "^4.1",
+        "asantibanez/livewire-charts": "^2.4",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/jetstream": "^2.11",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.5",
-        "power-components/livewire-powergrid": "^3.2",
+        "power-components/livewire-powergrid": "^3.3",
         "wire-elements/modal": "^1.0"
     },
     "require-dev": {

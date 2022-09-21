@@ -45,7 +45,7 @@
                         <td class="px-2 py-2 text-center">
                             {{ $sms_template -> SMS_Template_Title }}
                         </td>
-                        <td class="px-2 py-2 text-center">
+                        <td class="px-2 py-2 text-left">
                             {{ $sms_template -> SMS_Template_Message }}
                         </td>
                         <td class="px-2 py-2 text-center">
@@ -175,9 +175,9 @@
             {{-- <x-jet-danger-button class="ml-3" wire:click="delete" wire:loading.attr="disabled">
                 {{ __('Delete') }}
             </x-jet-danger-button> --}}
-            <button wire:click="delete" wire:loading.attr="disabled" type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                {{ __('Delete') }}
-            </button>
+                <button wire:click='delete' wire:loading.attr="disabled" type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    {{ __('Delete') }}
+                </button>
         </x-slot>
     </x-jet-dialog-modal>
 </div>

@@ -1,4 +1,4 @@
-<div class="w-full max-w-full p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+<div  class="w-full max-w-full p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
     <div class="grid grid-flow-col-dense gap-4 sm:flex-nowrap">
         <div class="col-span-2">
             <x-jet-input id="search" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" wire:model.debounce.800ms="search" placeholder="Search an sms log..." />
@@ -18,6 +18,9 @@
                 </th>
                 <th scope="col" class="px-2 py-2">
                     Sent SMS Status
+                </th>
+                <th scope="col" class="px-2 py-2">
+                    Sent Status Message
                 </th>
                 <th scope="col" class="px-2 py-2">
                     Sent SMS Date
@@ -53,6 +56,9 @@
                                 </span>
                             @endif
 
+                        </td>
+                        <td class="px-2 py-2 text-xs">
+                            {{$sms_log -> Sent_Status_Message }}
                         </td>
                         <td class="px-2 py-2">
                             {{$sms_log -> created_at }}

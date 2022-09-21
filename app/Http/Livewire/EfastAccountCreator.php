@@ -14,12 +14,13 @@ class EfastAccountCreator extends Component
     use WithPagination;
 
     public $Residents_Name;
-    public $Residents_Age;
     public $Residents_Gender;
     public $Residents_Mobile_Number;
     public $Residents_Address;
     public $Residents_Roles_ID;
     public $Residents_Email;
+    public $Residents_Birthday;
+    public $Residents_registerMeAs;
 
     public $Resident_Target_ID;
     public $search;
@@ -56,11 +57,11 @@ class EfastAccountCreator extends Component
     public function rules() {
         return [
             'Residents_Name' => 'required',
-            'Residents_Age' => 'required',
             'Residents_Gender' => 'required',
             'Residents_Mobile_Number' => ['required', 'min: 11', 'max: 11', Rule::unique('users', 'mobile_number')->ignore($this->Resident_Target_ID)],
             'Residents_Address' => 'required',
             'Residents_Roles_ID' => ['required', 'numeric', 'min: 1', 'max: 2'],
+            'Residents_Birthday' => ['required', 'date'],
         ];
     }
 
@@ -75,22 +76,25 @@ class EfastAccountCreator extends Component
     public function DataToBeStored() {
         return [
            'name' => $this->Residents_Name,
-           'age' => $this->Residents_Age,
            'gender' => $this->Residents_Gender,
            'roles_id' => $this->Residents_Roles_ID,
            'mobile_number' => $this->Residents_Mobile_Number,
            'address' => $this->Residents_Address,
+           'birthday' => $this->Residents_Birthday,
+           'registerMeAs' => $this->Residents_registerMeAs,
+           'isVerified' => true,
         ];
     }
 
     public function resetVariables() {
         $this->Residents_Name = null;
-        $this->Residents_Age = null;
         $this->Residents_Gender = null;
         $this->Residents_Mobile_Number = null;
         $this->Residents_Address = null;
         $this->Residents_Roles_ID = null;
         $this->Resident_Target_ID = null;
+        $this->Residents_Birthday = null;
+        $this->Residents_registerMeAs = null;
     }
 
 
@@ -107,9 +111,10 @@ class EfastAccountCreator extends Component
         $this->Residents_Mobile_Number = $founded_user_resident->mobile_number;
         $this->Residents_Address = $founded_user_resident->address;
         $this->Residents_Roles_ID = $founded_user_resident->roles_id;
-        $this->Residents_Age = $founded_user_resident->age;
         $this->Residents_Gender = $founded_user_resident->gender;
         $this->Residents_Email = $founded_user_resident->email;
+        $this->Residents_Birthday = $founded_user_resident->birthday;
+        $this->Residents_registerMeAs = $founded_user_resident->registerMeAs;
     }
 
 
@@ -124,10 +129,16 @@ class EfastAccountCreator extends Component
 
     public function read($search) {
         if(empty($search)) {
-            return User::orderBy('name', 'asc')->paginate(5);
+            return User::where('isVerified', '=', true)->orderBy('created_at', 'desc')->paginate(5);
         }
         else {
-            return User::where('name', 'LIKE', '%' . $search . '%')->orWhere('mobile_number', 'LIKE', '%' . $search . '%')->orderBy('name', 'asc')->paginate(3);
+            return User::where('isVerified', '=', true)
+            ->where('name', 'LIKE', '%' . $search . '%')
+            ->orWhere('mobile_number', '=', $search)
+            ->orWhere('registerMeAs','=', $search)
+            ->orWhere('gender', '=', $search)
+            ->orWhere('address', 'LIKE', '%' . $search . '%')
+            ->orderBy('name', 'asc')->paginate(5);
         }
     }
 

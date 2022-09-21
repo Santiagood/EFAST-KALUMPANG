@@ -15,6 +15,7 @@
 
         <!-- Styles -->
         @livewireStyles
+        @powerGridStyles
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -38,9 +39,13 @@
             </main>
         </div>
 
-        @stack('modals')
 
+        @stack('modals')
         @livewire('livewire-ui-modal')
         @livewireScripts
+        @livewireChartsScripts
+        {{-- @powerGridScripts --}}
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="../path/to/flowbite/dist/flowbite.js"></script>
     </body>
 </html>

@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\SentMessageLog;
+use Database\Seeders\RiverLevelSeeder;
 use Database\Seeders\SmsTemplateSeeder;
 use Database\Seeders\KalumpangStreetSeeder;
 
@@ -30,9 +31,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             RoleSeeder::class,
-            SmsTemplateSeeder::class,
-            SentMessageLogSeeder::class,
             KalumpangStreetSeeder::class,
+            // SmsTemplateSeeder::class,
+            // SentMessageLogSeeder::class,
+            // RiverLevelSeeder::class,
         ]);
     }
 }

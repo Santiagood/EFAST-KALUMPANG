@@ -12,6 +12,8 @@ class SmsTemplateCreator extends Component
 {
     use WithPagination;
 
+    public $password;
+    public $email;
     public $modalFormVisible = false;
     public $modalConfirmDeleteVisible = false;
 
@@ -161,6 +163,7 @@ class SmsTemplateCreator extends Component
         $this->SMS_Template_Target_ID = $id;
         $this->modalConfirmDeleteVisible = true;
     }
+
 
 
     public function delete() {

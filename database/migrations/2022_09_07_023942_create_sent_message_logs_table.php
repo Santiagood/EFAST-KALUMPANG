@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('Sent_Message');
             $table->text('Sent_Sender');
             $table->text('Sent_Status');
+            $table->text('Sent_Status_Message');
             $table->timestamps();
         });
     }

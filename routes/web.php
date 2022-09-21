@@ -30,6 +30,10 @@ Route::get('/', function () {
     return view('frontpage.home');
 })->name('homepage');
 
+Route::get('/not-yet-verified', function () {
+    return view('notYetVerified');
+})->name('notYetVerified');
+
 Route::get('/home', function () {
     return view('frontpage.home');
 })->name('homepage');
@@ -41,7 +45,8 @@ Route::get('/about-us', function () {
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
+    'isVerified',
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -49,7 +54,7 @@ Route::middleware([
 });
 
 
-Route::group(['middleware' => ['auth', 'verified']], function() {
+Route::group(['middleware' => ['auth', 'verified', 'isVerified',]], function() {
     //Route for Residents
     Route::group(['middleware' => 'role:Resident', 'prefix' => 'Residents', 'as' => 'Residents.'], function() {
         // Route::resource('RiverMonitoring', ResidentsRiverMonitoringController::class);

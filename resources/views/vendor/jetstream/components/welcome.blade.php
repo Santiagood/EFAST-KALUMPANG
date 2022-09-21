@@ -8,10 +8,7 @@
     </div>
 
     <div class="mt-6 text-gray-500">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus nibh nisi, cursus placerat est pulvinar nec. In hac habitasse platea dictumst. Proin orci nisl, pellentesque ut purus eget, tempor facilisis lorem. Suspendisse potenti. Aenean scelerisque ipsum et sapien sollicitudin tristique. Aliquam vel diam at mauris mattis eleifend. Curabitur hendrerit, justo et convallis varius, justo felis sagittis massa, sit amet pulvinar felis massa eget dolor. Fusce convallis, nulla vel sodales sollicitudin, urna est imperdiet sapien, quis euismod neque ex id leo. Quisque enim nibh, efficitur elementum dapibus at, lacinia vel arcu. Sed ornare mi at lacinia fringilla. Sed lobortis elit non libero tempus auctor. Donec ultricies nunc porta elit pharetra gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum a lectus dui.
     </div>
 </div>
 

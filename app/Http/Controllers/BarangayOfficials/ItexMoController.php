@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\BarangayOfficials;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\smsTemplate;
 use Illuminate\Support\Str;
@@ -15,6 +16,7 @@ class ItexMoController extends Controller
     public $Message;
     public $Sender;
     public $Status;
+    public $Status_Message;
 
     public function itexmo($Message, $ChunkOfResidentsNumber){
         $email = env('ITEXMO_email');
@@ -27,10 +29,30 @@ class ItexMoController extends Controller
         //         ->orderBy('created_at', 'desc')
         //         ->first()->name;
 
-        $status = 'normal';
-        $level = 89;
+        $status = DB::table('river_levels')
+                ->select('river_status')
+                ->orderBy('created_at', 'desc')
+                ->first()->river_status;
 
-        $message = str_replace("@river-status@", $status, str_replace("@river-level@", $level, $Message));
+        $level = DB::table('river_levels')
+                ->select('river_level')
+                ->orderBy('created_at', 'desc')
+                ->first()->river_level; // pareho lang po sa status, dito naman ccheck natin yung latest record at yung level ng water nya.
+
+        $time = DB::table('river_levels')
+                ->select('time')
+                ->orderBy('created_at', 'desc')
+                ->first()->time;
+
+        $date = DB::table('river_levels')
+                ->select('date')
+                ->orderBy('created_at', 'desc')
+                ->first()->date;
+
+        $message = str_replace("@river-status@", $status,
+                   str_replace("@river-level@", $level,
+                   str_replace("@river-time@", $time,
+                   str_replace("@river-date@", $date, $Message))));
 
         $ch = curl_init();
         $itexmo = array('Email'=>$email, 'Password'=>$passwd, 'ApiCode'=>$apicode, 'Recipients'=>$number, 'Message'=>$message);
@@ -45,11 +67,13 @@ class ItexMoController extends Controller
 
         if($output->Error) {
             $this->Status = 'Failed';
+            $this->Status_Message = $output->Message;
         }
         else {
             $this->Status = 'Success';
+            $this->Status_Message = $output->Message;
         }
-        dd($itexmo);
+        // dd($itexmo);
     }
 
     public function saveToSentMessageLogTable() {
@@ -57,6 +81,7 @@ class ItexMoController extends Controller
         $sentMessage->Sent_Message = $this->Message;
         $sentMessage->Sent_Sender = $this->Sender;
         $sentMessage->Sent_Status = $this->Status;
+        $sentMessage->Sent_Status_Message = $this->Status_Message;
         $sentMessage->save();
     }
 
@@ -64,9 +89,8 @@ class ItexMoController extends Controller
     public function sendSMS(Request $request) {
         $this->Sender = Auth::user()->name;
         $this->Message = $request->message;
-        // $this->Status = 'Success';
 
-        User::chunk(3, function($residents) {
+        User::where('isVerified', '=', 1)->chunk(3, function($residents) {
             foreach ($residents as $resident) {
                 $ChunkOfResidentsNumber[] = $resident->mobile_number;
             }

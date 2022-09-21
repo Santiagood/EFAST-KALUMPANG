@@ -10,36 +10,47 @@
 
         <x-jet-validation-errors class="mt-2 mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
-            <div class="grid grid-cols-2 grid-flow-row-dense gap-2">
-                <div class="mx-auto my-1 col-span-2 w-full">
+            <div class="grid grid-flow-row-dense grid-cols-2 gap-2">
+                <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="name" value="{{ __('Name') }}" />
-                    <x-jet-input id="name" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name" :value="old('name')" placeholder="José Rizal" required autofocus autocomplete="name" />
+                    <x-jet-input id="name" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name" :value="old('name')" placeholder="José Rizal" required autofocus autocomplete="name" />
                 </div>
 
-                <div class="mx-auto my-1 col-span-2 w-full">
+                <div class="w-full mx-auto my-1">
                     <x-jet-label for="mobile_number" value="{{ __('Mobile Number') }}" />
-                    <x-jet-input id="mobile_number" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="mobile_number" :value="old('mobile_number')" placeholder="09171234567" required />
+                    <x-jet-input id="mobile_number" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="mobile_number" :value="old('mobile_number')" placeholder="09171234567" required />
                 </div>
 
-                <div class="mx-auto my-1 w-full">
+                <div class="w-full mx-auto my-1">
+                    <x-jet-label for="birthday" value="{{ __('Birthday') }}" />
+                    <x-jet-input id="birthday" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" name="birthday" :value="old('birthday')" placeholder="" required />
+                </div>
+
+                <div class="w-full mx-auto my-1">
                     <x-jet-label for="gender" value="{{ __('Gender') }}" />
-                    <select id="gender" name="gender" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <select id="gender" name="gender" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                         <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
+                        <option value="I Prefer Not To Say">I prefer not to say</option>
                     </select>
                 </div>
 
-                <div class="mx-auto my-1 w-full">
-                    <x-jet-label for="age" value="{{ __('Age') }}" />
-                    <x-jet-input id="age" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="age" :value="old('age')" placeholder="30" required />
+                <div class="w-full mx-auto my-1">
+                    <x-jet-label for="registerMeAs" value="{{ __('Register me as:') }}" />
+                    <select id="registerMeAs" name="registerMeAs" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="N/A">Select</option>
+                        <option value="Person with disability">Person with disability</option>
+                        <option value="Elderly">Elderly</option>
+                        <option value="LGBTQ">LGBTQ</option>
+                    </select>
                 </div>
 
-                <div class="mx-auto my-1 col-span-2 w-full">
+                <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="address" value="{{ __('Address') }}" />
-                    <select id="address" name="address" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <select id="address" name="address" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                         <option value="">Select Street</option>
                         @foreach (\App\Models\KalumpangStreet::all(); as $street)
                             <option value="{{ $street->Street_name }}">{{ $street->Street_name }}</option>
@@ -47,21 +58,26 @@
                     </select>
                 </div>
 
-                <div class="mx-auto my-1 col-span-2 w-full">
+                <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="email" value="{{ __('Email') }}" />
-                    <x-jet-input id="email" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" :value="old('email')" placeholder="José_Rizal@gmail.com" required />
+                    <x-jet-input id="email" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" :value="old('email')" placeholder="José_Rizal@gmail.com" required />
                 </div>
 
-                <div class="mx-auto my-1 col-span-2 w-full">
+                <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="password" value="{{ __('Password') }}" />
-                    <x-jet-input id="password" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password" placeholder="YouWontGuessThisOne" required autocomplete="new-password" />
+                    <x-jet-input id="password" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password" placeholder="YouWontGuessThisOne" required autocomplete="new-password" />
                 </div>
 
-                <div class="mx-auto my-1 col-span-2 w-full">
+                <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                    <x-jet-input id="password_confirmation" class="block mt-1 w-full shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password_confirmation" placeholder="YouWontGuessThisOne" required autocomplete="new-password" />
+                    <x-jet-input id="password_confirmation" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password_confirmation" placeholder="YouWontGuessThisOne" required autocomplete="new-password" />
                 </div>
 
+                <div class="w-full col-span-2 mx-auto my-1">
+                    <x-jet-label for="id_picture" value="{{ __('Upload your Kalumpang ID') }}" />
+                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="id_picture" name="id_picture" type="file" required>
+                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">Image must be PNG, JPG, or JPEG (MAX: 5 MB).</p>
+                </div>
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -72,8 +88,8 @@
 
                             <div class="ml-2">
                                 {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="text-sm text-gray-600 underline hover:text-gray-900">'.__('Terms of Service').'</a>',
+                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="text-sm text-gray-600 underline hover:text-gray-900">'.__('Privacy Policy').'</a>',
                                 ]) !!}
                             </div>
                         </div>
@@ -82,7 +98,7 @@
             @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="text-sm text-gray-600 underline hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
@@ -92,4 +108,5 @@
             </div>
         </form>
     </x-jet-authentication-card>
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
 </x-guest-layout>

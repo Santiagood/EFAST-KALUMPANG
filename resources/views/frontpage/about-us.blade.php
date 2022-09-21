@@ -14,7 +14,7 @@
           <div class="flex flex-col items-center h-full text-center">
             <img alt="team" class="flex-shrink-0 object-cover object-center w-full h-56 mb-4 rounded-lg" src="https://dummyimage.com/200x200">
             <div class="w-full">
-              <h2 class="text-lg font-medium text-gray-900 title-font">Alper Kamu</h2>
+              <h2 class="text-lg font-medium text-gray-900 title-font">John Rainier Santiago</h2>
               <h3 class="mb-3 text-gray-500">UI Developer</h3>
               <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
               <span class="inline-flex">
@@ -41,7 +41,7 @@
           <div class="flex flex-col items-center h-full text-center">
             <img alt="team" class="flex-shrink-0 object-cover object-center w-full h-56 mb-4 rounded-lg" src="https://dummyimage.com/201x201">
             <div class="w-full">
-              <h2 class="text-lg font-medium text-gray-900 title-font">Holden Caulfield</h2>
+              <h2 class="text-lg font-medium text-gray-900 title-font">Adrian Adam Los Banos</h2>
               <h3 class="mb-3 text-gray-500">UI Developer</h3>
               <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
               <span class="inline-flex">
@@ -68,7 +68,7 @@
           <div class="flex flex-col items-center h-full text-center">
             <img alt="team" class="flex-shrink-0 object-cover object-center w-full h-56 mb-4 rounded-lg" src="https://dummyimage.com/202x202">
             <div class="w-full">
-              <h2 class="text-lg font-medium text-gray-900 title-font">Atticus Finch</h2>
+              <h2 class="text-lg font-medium text-gray-900 title-font">Ray Ryan Cruz</h2>
               <h3 class="mb-3 text-gray-500">UI Developer</h3>
               <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
               <span class="inline-flex">
@@ -95,7 +95,7 @@
           <div class="flex flex-col items-center h-full text-center">
             <img alt="team" class="flex-shrink-0 object-cover object-center w-full h-56 mb-4 rounded-lg" src="https://dummyimage.com/203x203">
             <div class="w-full">
-              <h2 class="text-lg font-medium text-gray-900 title-font">Henry Letham</h2>
+              <h2 class="text-lg font-medium text-gray-900 title-font">Clarence "The Pogi" Edulan</h2>
               <h3 class="mb-3 text-gray-500">UI Developer</h3>
               <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
               <span class="inline-flex">
@@ -147,7 +147,7 @@
       </div>
       <div class="flex flex-col w-full p-10 mt-8 bg-white rounded-lg lg:w-1/3 md:w-1/2 md:ml-auto md:py-8 md:mt-0">
         <h2 class="mb-1 text-lg font-medium text-gray-900 title-font">Feedback</h2>
-        <p class="mb-5 leading-relaxed text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+        <p class="mb-5 leading-relaxed text-gray-600">The EFAST-Kalumpang Team would like to hear from you</p>
         <div class="relative mb-4">
           <label for="name" class="text-sm leading-7 text-gray-600">Name</label>
           <input type="text" id="name" name="name" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
@@ -160,7 +160,7 @@
           <label for="message" class="text-sm leading-7 text-gray-600">Message</label>
           <textarea id="message" name="message" class="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none resize-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"></textarea>
         </div>
-        <button class="px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">Button</button>
+        <button class="px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">Submit</button>
         <p class="mt-3 text-xs text-gray-500">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
       </div>
     </div>

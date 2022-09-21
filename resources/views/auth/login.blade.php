@@ -19,9 +19,9 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" placeholder="José_Rizal@gmail.com" required autofocus />
+            <div class="mt-4">
+                <x-jet-label for="login" value="{{ __('Email / Mobile Number') }}" />
+                <x-jet-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" placeholder="José_Rizal@gmail.com/09123456789" required autofocus />
             </div>
 
             <div class="mt-4">
@@ -49,4 +49,5 @@
             </div>
         </form>
     </x-jet-authentication-card>
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
 </x-guest-layout>

@@ -28,10 +28,13 @@
             <div class="sm:gap-4 sm:flex">
             @if (Route::has('login'))
                 @auth
-                    <a class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 transition rounded-md shadow"
-                    href="{{ url('/dashboard') }}">
-                    Dashboard
-                    </a>
+                    @if(auth()->user()->isVerified == true) {
+                        <a class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 transition rounded-md shadow"
+                        href="{{ url('/dashboard') }}">
+                        Dashboard
+                        </a>
+                    }
+                    @endif
                 @else
                     <a class="inline-block px-5 py-2.5 text-sm font-medium text-white bg-indigo-500 hover:bg-indigo-600 transition rounded-md shadow"
                     href="{{ route('login') }}">

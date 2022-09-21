@@ -10,9 +10,9 @@ class SentMessageLog extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Sent_Title',
         'Sent_Message',
         'Sent_Sender',
         'Sent_Status',
+        'Sent_Status_Message',
     ];
 }

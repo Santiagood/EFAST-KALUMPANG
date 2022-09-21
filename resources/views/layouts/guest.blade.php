@@ -14,7 +14,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <div class="font-sans antialiased text-gray-900">
+        <div class="font-sans antialiased text-gray-900 min-w-full min-h-screen bg-fixed bg-no-repeat bg-cover" style="background-image: url('{{ asset('images/kalumpangMapWallpaper.png') }}');">
             {{ $slot }}
         </div>
     </body>

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->text('Street_name');
             $table->integer('Priority');
-            $table->integer('Residents_registered')->nullable();
             $table->timestamps();
         });
     }

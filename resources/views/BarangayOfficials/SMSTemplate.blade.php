@@ -8,14 +8,16 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="flex flex-wrap sm:flex-nowrap">
-                <div class="p-2 overflow-hidden hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
+                <div class="p-2 h-fit w-fit overflow-hidden hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
                     @livewire('sms-compose-message')
                 </div>
-
-                <div class="p-2 overflow-hidden hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
-                    @livewire('sms-sent-log-table')
+                <div class="p-2 w-full overflow-hidden hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
+                    @livewire('charts.daily-monitoring')
                 </div>
             </div>
+                <div class="p-2 h-fit overflow-hidden hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
+                    @livewire('sms-sent-log-table')
+                </div>
             <x-jet-section-border />
             <div class="p-2 overflow-hidden hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
                 @livewire('sms-template-creator')
