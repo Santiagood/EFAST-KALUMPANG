@@ -7,10 +7,15 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
+            <div class="p-2 overflow-hidden shadow-xl hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 sm:rounded-lg">
+                @livewire('dashboard-content')
             </div>
             <x-jet-section-border />
+            @if(auth()->user()->roles_id != 2)
+            <div class="p-2 overflow-hidden shadow-xl hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 sm:rounded-lg">
+                @livewire('dashboard-content-control-panel')
+            </div>
+            @endif
         </div>
     </div>
 </x-app-layout>

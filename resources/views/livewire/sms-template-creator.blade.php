@@ -16,7 +16,7 @@
     {{-- this is the table --}}
     <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 border border-indigo-400 dark:text-gray-400">
-        <thead class="text-xs text-white uppercase bg-indigo-700 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-slate-600 font-light bg-slate-100 text-xs dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-2 py-2 text-center">
                     Template Title

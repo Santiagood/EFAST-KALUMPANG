@@ -32,8 +32,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             KalumpangStreetSeeder::class,
-            // SmsTemplateSeeder::class,
-            // SentMessageLogSeeder::class,
+            SmsTemplateSeeder::class,
+            SentMessageLogSeeder::class,
             // RiverLevelSeeder::class,
         ]);
     }

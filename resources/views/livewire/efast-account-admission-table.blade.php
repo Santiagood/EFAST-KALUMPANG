@@ -8,7 +8,7 @@
 
     <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left text-gray-500 border border-indigo-400 dark:text-gray-400">
-            <thead class="text-xs text-white uppercase bg-indigo-700 dark:bg-gray-700 dark:text-gray-400">
+            <thead class="text-slate-600 font-light bg-slate-100 text-xs  uppercase dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-2 py-2 text-center">
                         Resident Name
@@ -85,32 +85,30 @@
                 @endif
             </tbody>
         </table>
-        </div>
-        <div class="mt-2">
-            {{ $EfastAdmission->links() }}
-        </div>
+    </div>
+    <div class="mt-2">
+        {{ $EfastAdmission->links() }}
+    </div>
 
 
-        <x-jet-dialog-modal wire:model="modalViewAccountVisible">
-            <x-slot name="title">
-                {{ __('Verify the authenticity of the ID') }}
-            </x-slot>
+    <x-jet-dialog-modal wire:model="modalViewAccountVisible">
+        <x-slot name="title">
+            {{ __('Verify the authenticity of the ID') }}
+        </x-slot>
 
-            <x-slot name="content">
-                <div class="mt-4">
-                    <figure class="mx-auto">
-                        <img class="mx-auto max-w-full h-96 rounded-lg" src="{{  asset('id_pictures/' . $Residents_ID_Picture) }}" alt="image description">
-                        <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">{{ $Residents_name }}</figcaption>
-                    </figure>
-                </div>
-            </x-slot>
+        <x-slot name="content">
+            <div class="mt-4">
+                <figure class="mx-auto">
+                    <img class="mx-auto max-w-full h-96 rounded-lg" src="{{  asset('id_pictures/' . $Residents_ID_Picture) }}" alt="image description">
+                    <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">{{ $Residents_name }}</figcaption>
+                </figure>
+            </div>
+        </x-slot>
 
-            <x-slot name="footer">
-                <button wire:click="$toggle('modalViewAccountVisible')" wire:loading.attr="disabled" type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                    {{ __('Close') }}
-                </button>
-            </x-slot>
-
-        </x-jet-dialog-modal>
-
+        <x-slot name="footer">
+            <button wire:click="$toggle('modalViewAccountVisible')" wire:loading.attr="disabled" type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                {{ __('Close') }}
+            </button>
+        </x-slot>
+    </x-jet-dialog-modal>
 </div>

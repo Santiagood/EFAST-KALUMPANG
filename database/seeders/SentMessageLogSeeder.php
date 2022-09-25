@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-use Database\Seeders\SentMessageLogSeeder;
 use App\Models\SentMessageLog;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
