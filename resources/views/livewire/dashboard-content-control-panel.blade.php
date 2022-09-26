@@ -41,9 +41,10 @@
                         <td class="px-2 py-2 text-center">
                             {{ $infograph -> infograph_title }}
                         </td>
-                        <td class="px-2 py-2 text-center">
+                        <td class="px-2 py-2 text-left">
                             @if ($infograph->infograph_message != null )
-                                {{ $infograph -> infograph_message }}
+                                {{-- {{ $infograph -> infograph_message }} --}}
+                                {{ Illuminate\Support\Str::limit($infograph -> infograph_message, 190) }}
                             @else
                                 empty description
                             @endif

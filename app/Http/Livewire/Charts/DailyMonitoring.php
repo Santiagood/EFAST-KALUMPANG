@@ -28,7 +28,7 @@ class DailyMonitoring extends Component
                 $Time = $river->first()->time;
                 return $daily_area->addPoint($Time, $River_Level);
             }, LivewireCharts::areaChartModel()
-                ->setTitle('Daily River Level')
+                // ->setTitle('Daily River Level')
                 ->setAnimated(true)
                 ->setColor('#29ABE2')
                 ->setDataLabelsEnabled(true)

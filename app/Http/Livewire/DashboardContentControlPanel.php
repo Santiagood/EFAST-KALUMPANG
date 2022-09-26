@@ -13,6 +13,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 class DashboardContentControlPanel extends Component
 {
 
+
+
     use WithPagination;
     use WithFileUploads;
 
@@ -62,6 +64,7 @@ class DashboardContentControlPanel extends Component
         DashboardInfograph::create($this->DataToBeStored());
         $this->infograph_image->store('public/infograph_pictures');
         $this->modalFormVisible = false;
+        $this->emit('refreshTheInfograph');
         $this->resetVariables();
     }
 
@@ -105,6 +108,7 @@ class DashboardContentControlPanel extends Component
         DashboardInfograph::find($this->infograph_Target_ID)->update($this->DataToBeStored());
         $this->infograph_image->store('public/infograph_pictures');
         $this->modalFormVisible = false;
+        $this->emit('refreshTheInfograph');
     }
 
     public function deleteShowModal($id) {
@@ -116,6 +120,7 @@ class DashboardContentControlPanel extends Component
         DashboardInfograph::destroy($this->infograph_Target_ID);
         $this->modalConfirmDeleteVisible = false;
         $this->resetPage();
+        $this->emit('refreshTheInfograph');
     }
 
     public function render()

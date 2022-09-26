@@ -23,7 +23,7 @@ class YearlyMonitoring extends Component
                 return $yearly_column->addColumn($Year, $AverageLevel, '#90cdf4');
 
             }, LivewireCharts::columnChartModel()
-                ->setTitle('Yearly River Level')
+                // ->setTitle('Yearly River Level')
                 ->setAnimated(true)
                 ->setDataLabelsEnabled(true)
                 ->withLegend()

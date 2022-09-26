@@ -24,11 +24,6 @@ class ItexMoController extends Controller
         $apicode = env('ITEXMO_apicode');
         $number = $ChunkOfResidentsNumber;
 
-        // $user = DB::table('users')
-        //         ->select('name')
-        //         ->orderBy('created_at', 'desc')
-        //         ->first()->name;
-
         $status = DB::table('river_levels')
                 ->select('river_status')
                 ->orderBy('created_at', 'desc')

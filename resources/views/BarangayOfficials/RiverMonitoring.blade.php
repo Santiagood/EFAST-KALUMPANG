@@ -8,6 +8,10 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="p-2 overflow-hidden shadow-xl hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 sm:rounded-lg">
+                @livewire('open-weather-component')
+            </div>
+            <x-jet-section-border />
+            <div class="p-2 overflow-hidden shadow-xl hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 sm:rounded-lg">
                 @livewire('charts.daily-monitoring')
             </div>
             <x-jet-section-border />

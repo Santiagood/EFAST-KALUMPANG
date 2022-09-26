@@ -22,7 +22,7 @@ class MonthlyMonitoring extends Component
                 return $monthly_column->addColumn($Month, $AverageLevel, '#90cdf4');
 
             }, LivewireCharts::columnChartModel()
-                ->setTitle('Monthly River Level')
+                // ->setTitle('Monthly River Level')
                 ->setAnimated(true)
                 ->setDataLabelsEnabled(true)
                 ->withLegend()
