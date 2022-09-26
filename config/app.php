@@ -160,6 +160,7 @@ return [
          * Laravel Framework Service Providers...
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+        RakibDevs\Weather\WeatherServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -213,6 +214,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+        'Weather' => RakibDevs\Weather\Weather::class,
     ])->toArray(),
 
 ];
