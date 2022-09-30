@@ -9,6 +9,7 @@ use Database\Seeders\SentMessageLog;
 use Database\Seeders\RiverLevelSeeder;
 use Database\Seeders\SmsTemplateSeeder;
 use Database\Seeders\KalumpangStreetSeeder;
+use Database\Seeders\ResidentCategorySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             KalumpangStreetSeeder::class,
-            // SmsTemplateSeeder::class,
+            ResidentCategorySeeder::class,
+            SmsTemplateSeeder::class,
             // SentMessageLogSeeder::class,
             // RiverLevelSeeder::class,
         ]);

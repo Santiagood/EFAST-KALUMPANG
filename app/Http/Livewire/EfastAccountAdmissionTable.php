@@ -47,6 +47,7 @@ class EfastAccountAdmissionTable extends Component
         $this->Residents_Target_ID = $id;
         User::find($this->Residents_Target_ID)->update($this->DataToBeStored());
         $this->resetPage();
+        $this->emit('refreshTheAccoutControl');
     }
 
     public function deny($id) {

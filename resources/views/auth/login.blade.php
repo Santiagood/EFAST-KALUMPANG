@@ -21,12 +21,12 @@
 
             <div class="mt-4">
                 <x-jet-label for="login" value="{{ __('Email / Mobile Number') }}" />
-                <x-jet-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" placeholder="José_Rizal@gmail.com/09123456789" required autofocus />
+                <x-jet-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" placeholder="" required autofocus />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required placeholder="YouWontGuessThisOne" autocomplete="current-password" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required placeholder="••••••••••" autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">

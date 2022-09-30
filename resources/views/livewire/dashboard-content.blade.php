@@ -1,7 +1,7 @@
 <div class="w-full max-w-full p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="text-center max-w-xl mx-auto">
-            <h1 class="text-3xl md:text-6xl font-bold mb-5 text-gray-600">Read the latest <br>Infographs.</h1>
+            <h1 class="text-3xl md:text-5xl font-bold mb-5 text-gray-600">Read the latest <br>Infographs.</h1>
             <h3 class="text-sm mb-3 font-light md:text-lg">"The Lord is good, a strong refuge when trouble comes. He is close to those who trust in him."<br>
                 <h4 class="text-xs md:text-base mb-2 font-light">Nahum 1:7 - NLT</h4>
             </h3>
@@ -22,20 +22,19 @@
                 <div class="mx-auto my-10 grid max-w-screen-xl gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
                     @foreach ($showAllInfographs as $infograph)
                         <div class="group cursor mx-4 overflow-hidden rounded-2xl bg-white shadow-xl duration-200 hover:-translate-y-4">
-                        <div class="flex h-60 flex-col justify-between overflow-hidden">
-                            <img src="{{ asset('storage/infograph_pictures/' . $infograph->infograph_image) }}" />
-                        </div>
-                        <div class="flex-1 overflow-hidden bg-white px-6 py-8">
-                            <h5 class="group-hover:text-indigo-600 mb-4 text-xl font-bold">{{ $infograph->infograph_title }}</h5>
-                            <p class="mb-8 text-gray-600">{{ Illuminate\Support\Str::limit($infograph->infograph_message, 82) }}</p>
-                            <div class="flex justify-between">
-                            {{-- <a href="#" class="group text-lg font-bold focus:text-indigo-600 hover:text-indigo-600"> --}}
-                            <button class="group text-lg font-bold focus:text-indigo-600 hover:text-indigo-600" wire:click='viewShowModal({{ $infograph->id }})' class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <span>▷</span>
-                                <span class="underline">View the content</span>
-                            </button>
+                            <div class="flex h-60 flex-col justify-between overflow-hidden">
+                                <img src="{{ asset('storage/infograph_pictures/' . $infograph->infograph_image) }}" />
                             </div>
-                        </div>
+                            <div class="flex-1 overflow-hidden bg-white px-6 py-8">
+                                <h5 class="group-hover:text-indigo-600 mb-4 text-xl font-bold">{{ $infograph->infograph_title }}</h5>
+                                <p class="mb-8 text-gray-600">{{ Illuminate\Support\Str::limit($infograph->infograph_message, 82) }}</p>
+                                <div class="flex justify-between">
+                                    <button class="group text-lg font-bold focus:text-indigo-600 hover:text-indigo-600" wire:click='viewShowModal({{ $infograph->id }})' class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        <span>▷</span>
+                                        <span class="underline">View the content</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -48,13 +47,12 @@
                         <div class="flex-1 overflow-hidden bg-white px-6 py-8">
                             <h5 class="group-hover:text-indigo-600 mb-4 text-xl font-bold">No Result Found!</h5>
                             <p class="mb-8 text-gray-600">We currently do not have an infograph about {{ $search }}. You may suggest this to the barangay official. Use the chat at the bottom right of your screen.</p>
-                            <div class="flex justify-between">
                         </div>
                     </div>
                 </div>
             @endif
         </div>
-        <div class="mt-4">
+        <div class="">
             {{ $showAllInfographs->links() }}
         </div>
     </div>

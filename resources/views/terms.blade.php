@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="pt-4 bg-gray-100">
+    <div class="pt-4 bg-fixed bg-no-repeat bg-cover" style="background-image: url('{{ asset('images/kalumpangMapWallpaper.png') }}');">
         <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
             <div>
                 <x-jet-authentication-card-logo />

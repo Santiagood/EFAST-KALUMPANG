@@ -15,12 +15,12 @@
             <div class="grid grid-flow-row-dense grid-cols-2 gap-2">
                 <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="name" value="{{ __('Name') }}" />
-                    <x-jet-input id="name" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name" :value="old('name')" placeholder="José Rizal" required autofocus autocomplete="name" />
+                    <x-jet-input id="name" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="name" :value="old('name')" placeholder="Lastname, Firstname" required autofocus autocomplete="name" />
                 </div>
 
                 <div class="w-full mx-auto my-1">
                     <x-jet-label for="mobile_number" value="{{ __('Mobile Number') }}" />
-                    <x-jet-input id="mobile_number" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="mobile_number" :value="old('mobile_number')" placeholder="09171234567" required />
+                    <x-jet-input id="mobile_number" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="number" name="mobile_number" :value="old('mobile_number')" placeholder="09123456789" required />
                 </div>
 
                 <div class="w-full mx-auto my-1">
@@ -31,7 +31,7 @@
                 <div class="w-full mx-auto my-1">
                     <x-jet-label for="gender" value="{{ __('Gender') }}" />
                     <select id="gender" name="gender" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                        <option value="">Select</option>
+                        <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="I Prefer Not To Say">I prefer not to say</option>
@@ -41,10 +41,10 @@
                 <div class="w-full mx-auto my-1">
                     <x-jet-label for="registerMeAs" value="{{ __('Register me as:') }}" />
                     <select id="registerMeAs" name="registerMeAs" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                        <option value="N/A">Select</option>
-                        <option value="Person with disability">Person with disability</option>
-                        <option value="Elderly">Elderly</option>
-                        <option value="LGBTQ">LGBTQ</option>
+                        <option value="">Select Category</option>
+                        @foreach (\App\Models\residentCategory::all(); as $Category)
+                            <option value="{{ $Category->category }}">{{ $Category->category }}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -60,17 +60,17 @@
 
                 <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="email" value="{{ __('Email') }}" />
-                    <x-jet-input id="email" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" :value="old('email')" placeholder="José_Rizal@gmail.com" required />
+                    <x-jet-input id="email" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" :value="old('email')" placeholder="Your email address" required />
                 </div>
 
                 <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="password" value="{{ __('Password') }}" />
-                    <x-jet-input id="password" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password" placeholder="YouWontGuessThisOne" required autocomplete="new-password" />
+                    <x-jet-input id="password" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password" placeholder="••••••••••" required autocomplete="new-password" />
                 </div>
 
                 <div class="w-full col-span-2 mx-auto my-1">
                     <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                    <x-jet-input id="password_confirmation" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password_confirmation" placeholder="YouWontGuessThisOne" required autocomplete="new-password" />
+                    <x-jet-input id="password_confirmation" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="password" name="password_confirmation" placeholder="••••••••••" required autocomplete="new-password" />
                 </div>
 
                 <div class="w-full col-span-2 mx-auto my-1">

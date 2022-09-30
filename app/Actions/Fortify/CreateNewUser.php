@@ -29,6 +29,7 @@ class CreateNewUser implements CreatesNewUsers
             'mobile_number' => ['required', 'string', 'min: 11', 'max: 11', 'unique:users'],
             'gender' => ['required', 'string'],
             'address' => ['required', 'string'],
+            'registerMeAs' => ['required'],
             'id_picture' => ['required','mimes:jpg,png,jpeg','max:5048'],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();

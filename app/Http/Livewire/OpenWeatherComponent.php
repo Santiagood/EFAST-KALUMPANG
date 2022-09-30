@@ -12,7 +12,7 @@ class OpenWeatherComponent extends Component
     public $weather_desc;
     public $humid_num;
     public $temp_num;
-    public $date_time;
+    public $time;
 
     public function getWeather() {
 
@@ -24,7 +24,6 @@ class OpenWeatherComponent extends Component
         $icon = $data->weather[0]->icon;
         $humi = $data->main->humidity;
         $temp = $data->main->temp;
-
 
         OpenWeather::create([
             'weather_main'=>$main,
@@ -42,6 +41,7 @@ class OpenWeatherComponent extends Component
         $this->weather_desc = null;
         $this->humid_num = null;
         $this->temp_num = null;
+        $this->time = null;
     }
 
     public function loadVariables() {
@@ -51,11 +51,12 @@ class OpenWeatherComponent extends Component
         $this->weather_desc = $openweatherdata->weather_desc;
         $this->humid_num = $openweatherdata->humidity_reading;
         $this->temp_num = $openweatherdata->temperature_reading;
+        $this->time = now()->format('g:i a');
     }
 
     public function refreshWeather() {
         $this->resetVariables();
-        // $this->getWeather();
+        $this->getWeather();
         $this->loadVariables();
     }
 
@@ -67,6 +68,7 @@ class OpenWeatherComponent extends Component
             'weather_desc' => $this->weather_desc,
             'humid_num' => $this->humid_num,
             'temp_num' => $this->temp_num,
+            'time' => $this->time,
         ]);
     }
 }

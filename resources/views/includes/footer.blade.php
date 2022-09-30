@@ -1,4 +1,4 @@
-<footer class="p-4 bg-gray-900 rounded-md shadow md:px-6 md:py-8">
+<footer class="p-4 bg-gray-900 shadow md:px-6 md:py-8">
     <div class="sm:flex sm:items-center sm:justify-between">
         <a href="{{ route('homepage') }}" class="flex items-center mb-4 sm:mb-0">
             <img src="{{ asset('/images/EFAST-logo.png') }}" class="h-12 mr-3 rounded-full" alt="EFAST Logo" />

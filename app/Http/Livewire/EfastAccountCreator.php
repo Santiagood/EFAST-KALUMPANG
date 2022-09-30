@@ -11,6 +11,8 @@ use App\Models\Role;
 
 class EfastAccountCreator extends Component
 {
+    protected $listeners = ['refreshTheAccoutControl' => 'render'];
+
     use WithPagination;
 
     public $Residents_Name;

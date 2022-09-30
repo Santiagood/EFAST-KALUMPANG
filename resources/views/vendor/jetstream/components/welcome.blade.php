@@ -7,11 +7,6 @@
         Welcome to EFAST-Kalumpang.com
     </div>
 
-    {{-- this is only visible to the barangay official --}}
-    <div class="py-5">
-        Takimata at dolor diam erat magna elitr et aliquyam ullamcorper consequat magna at clita et consetetur accusam quod eos. Eleifend consetetur sed diam elitr accusam dignissim gubergren sea eirmod sadipscing lorem ad facilisi kasd no eirmod. Justo sed augue consequat vero dolor eirmod. Kasd tempor elit et stet et lorem sadipscing hendrerit et dolores kasd sit aliquip kasd dolore clita elitr.
-    </div>
-
     <div>
         <div class="p-2 h-fit overflow-hidden bg-blue-500 shadow-xl sm:rounded-lg">
             @livewire('dashboard-content')

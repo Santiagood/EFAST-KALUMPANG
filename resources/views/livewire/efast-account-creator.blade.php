@@ -1,11 +1,12 @@
-<div class="w-full max-w-full p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+<div class="w-full max-w-full p-3 text-left bg-white border border-gray-200 rounded-lg shadow-md sm:p-2 md:p-4 dark:bg-gray-800 dark:border-gray-700">
+    <p class="font-bold text-center">Resident Account Control</p>
     <div class="grid grid-flow-col-dense gap-4 sm:flex-nowrap">
         <div class="col-span-2">
             <x-jet-input id="search" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" wire:model.debounce.800ms="search" placeholder="Search a user..." />
         </div>
         <div class="col-span-1 justify-self-end">
             <button wire:click='createShowModal' type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                {{ __('Create New Resident') }}
+                {{ __('New Resident') }}
             </button>
         </div>
     </div>
@@ -131,20 +132,17 @@
             <div class="grid grid-flow-row-dense grid-cols-2 gap-2">
                 <div class="mt-4">
                     <x-jet-label for="Residents_Name" value="{{ __('Resident Name') }}" />
-                    <x-jet-input id="Residents_Name" class="block w-full mt-1" type="text" wire:model.debounce.800ms="Residents_Name" required placeholder="José Rizal"/>
+                    <x-jet-input id="Residents_Name" class="block w-full mt-1" type="text" wire:model.debounce.800ms="Residents_Name" required placeholder="Lastname, Firstname"/>
                     @error('Residents_Name')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
                 </div>
 
                 <div class="mt-4">
                     <x-jet-label for="Residents_Mobile_Number" value="{{ __('Resident Number') }}" />
-                    <x-jet-input id="Residents_Mobile_Number" class="block w-full mt-1" type="number" wire:model.debounce.800ms="Residents_Mobile_Number" required placeholder="09171234567"/>
+                    <x-jet-input id="Residents_Mobile_Number" class="block w-full mt-1" type="number" wire:model.debounce.800ms="Residents_Mobile_Number" required placeholder="09123456789"/>
                     @error('Residents_Mobile_Number')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
                 </div>
 
                 <div class="mt-4">
-                    {{-- <x-jet-label for="Residents_Age" value="{{ __('Resident Age') }}" />
-                    <x-jet-input id="Residents_Age" class="block w-full mt-1" type="number" wire:model.debounce.800ms="Residents_Age" required placeholder="30"/>
-                    @error('Residents_Age')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror --}}
                     <x-jet-label for="Residents_Birthday" value="{{ __('Resident Birthday') }}" />
                     <x-jet-input wire:model.debounce.800ms="Residents_Birthday" id="Residents_Birthday" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date"  required />
                     @error('Residents_Birthday')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
@@ -154,7 +152,7 @@
                     <x-jet-label for="Residents_Roles_ID" value="{{ __('Resident Role') }}" />
                     <select id="Residents_Roles_ID" wire:model.debounce.800ms="Residents_Roles_ID" name="Residents_Roles_ID" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
                         <option value="">Select Role</option>
-                        <option value="" disabled>BarangayOfficial</option>
+                        <option value="1" disabled>BarangayOfficial</option>
                         <option value="2">Resident</option>
                     </select>
                     @error('Residents_Roles_ID')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
@@ -163,22 +161,23 @@
                 <div class="mt-4">
                     <x-jet-label for="Residents_Gender" value="{{ __('Resident Gender') }}" />
                     <select id="Residents_Gender" type="text" wire:model.debounce.800ms="Residents_Gender" name="Residents_Gender" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
-                        <option value="">Select</option>
+                        <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
+                        <option value="I Prefer Not To Say">I prefer not to say</option>
                     </select>
                     @error('Residents_Gender')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
                 </div>
 
                 <div class="row-span-2 mt-4">
                     <x-jet-label for="Residents_registerMeAs" value="{{ __('Resident Register as') }}" />
-                    <select id="Residents_registerMeAs" wire:model.debounce.800ms="Residents_registerMeAs" name="Residents_registerMeAs" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
-                        <option value="N/A">Select</option>
-                        <option value="Person with disability">Person with disability</option>
-                        <option value="Elderly">Elderly</option>
-                        <option value="LGBTQ">LGBTQ</option>
+                    <select id="Residents_registerMeAs" name="Residents_registerMeAs" wire:model.debounce.800ms="Residents_registerMeAs" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="">Select Category</option>
+                        @foreach (\App\Models\residentCategory::all(); as $Category)
+                            <option value="{{ $Category->category }}">{{ $Category->category }}</option>
+                        @endforeach
                     </select>
-                    @error('Residents_Roles_ID')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+                    @error('Residents_registerMeAs')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
                 </div>
 
                 <div class="mt-4">
@@ -236,6 +235,7 @@
                 </select>
                 @error('Residents_Address')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
             </div>
+            
             @if ($Residents_Email != null)
                 <div class="mt-4">
                     <x-jet-label for="Residents_Roles_ID" value="{{ __('Resident Role') }}" />

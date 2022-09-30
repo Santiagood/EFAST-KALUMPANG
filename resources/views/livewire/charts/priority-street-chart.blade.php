@@ -1,19 +1,24 @@
-<div wire:poll.30000ms class="w-full max-w-full p-3 text-center bg-white border border-gray-200 rounded-lg shadow-md sm:p-2 md:p-4 dark:bg-gray-800 dark:border-gray-700">
-    <span class="font-bold">TODAY:</span> {{ now()->timezone('Asia/Manila')->toDayDateTimeString() }}
-    <div class="flex flex-wrap sm:flex-nowrap">
+<div wire:poll.5000ms class="w-full max-w-full p-3 text-center bg-white border border-gray-200 rounded-lg shadow-md sm:p-2 md:p-4 dark:bg-gray-800 dark:border-gray-700">
+    {{-- <span class="font-bold">TODAY:</span> {{ now()->timezone('Asia/Manila')->toDayDateTimeString() }} --}}
+    <div class="flex flex-wrap sm:flex-nowrap py-4">
         <div class="w-full h-96">
+            <span class="font-bold text-center">Street Priority</span>
             <livewire:livewire-pie-chart
                 key="{{ $PriorityStreetChartModel->reactiveKey() }}"
                 :pie-chart-model="$PriorityStreetChartModel"
             />
         </div>
+
         <div class="w-full h-96">
+            <span class="font-bold text-center">Residents Per Street</span>
             <livewire:livewire-pie-chart
                 key="{{ $ResidentsPerStreetChartModel->reactiveKey() }}"
                 :pie-chart-model="$ResidentsPerStreetChartModel"
             />
         </div>
+
         <div class="w-full h-96">
+            <span class="font-bold text-center">Registered Residents Categories</span>
             <livewire:livewire-column-chart
                 key="{{ $RegisteredAsChartModel->reactiveKey() }}"
                 :column-chart-model="$RegisteredAsChartModel"

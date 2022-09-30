@@ -18,6 +18,15 @@
             <div class="p-2 overflow-hidden shadow-xl hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 sm:rounded-lg">
                 @livewire('efast-account-admission-table')
             </div>
+            <x-jet-section-border />
+            <div class="flex flex-wrap sm:flex-nowrap">
+                <div class="p-2 w-full overflow-hidden h-fit hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
+                    @livewire('categories-control-panel')
+                </div>
+                <div class="p-2 w-full overflow-hidden h-fit hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 shadow-xl sm:rounded-lg">
+                    @livewire('street-control-panel')
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>

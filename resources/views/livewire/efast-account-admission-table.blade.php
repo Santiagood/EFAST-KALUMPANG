@@ -1,4 +1,5 @@
-<div class="w-full max-w-full p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+<div class="w-full max-w-full p-3 text-left bg-white border border-gray-200 rounded-lg shadow-md sm:p-2 md:p-4 dark:bg-gray-800 dark:border-gray-700">
+    <p class="font-bold text-center">Resident Admission Control</p>
     <div class="grid grid-flow-col-dense gap-4 sm:flex-nowrap">
         <div class="col-span-2">
             <x-jet-input id="search" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" wire:model.debounce.800ms="search" placeholder="Search a user..." />
@@ -29,6 +30,9 @@
                         Resident Address
                     </th>
                     <th scope="col" class="px-2 py-2 text-center">
+                        Registered As
+                    </th>
+                    <th scope="col" class="px-2 py-2 text-center">
                         Resident Kalumpang ID
                     </th>
                     <th scope="col" class="px-2 py-2 text-center">
@@ -57,6 +61,9 @@
                             </td>
                             <td class="px-2 py-2 text-center">
                                 {{ $Account -> address }}
+                            </td>
+                            <td class="px-2 py-2 text-center">
+                                {{ $Account -> registerMeAs }}
                             </td>
                             <td class="px-2 py-2 text-center items-center">
                                 <img src="{{ asset('id_pictures/' . $Account -> id_picture) }}" class="h-20 mx-auto" alt="">
@@ -100,7 +107,7 @@
             <div class="mt-4">
                 <figure class="mx-auto">
                     <img class="mx-auto max-w-full h-96 rounded-lg" src="{{  asset('id_pictures/' . $Residents_ID_Picture) }}" alt="image description">
-                    <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">{{ $Residents_name }}</figcaption>
+                    <figcaption class="mt-2 text-lg text-center text-gray-500 dark:text-gray-400">{{ $Residents_name }}</figcaption>
                 </figure>
             </div>
         </x-slot>

@@ -7,14 +7,11 @@ use App\Models\DashboardInfograph;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Auth;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+// use Illuminate\Support\Facades\Auth;
+// use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardContentControlPanel extends Component
 {
-
-
-
     use WithPagination;
     use WithFileUploads;
 
@@ -25,7 +22,6 @@ class DashboardContentControlPanel extends Component
     public $infograph_order;
     public $infograph_message;
     public $infograph_image_preloaded;
-
 
     public $infograph_Target_ID;
     public $search = '';
@@ -86,6 +82,7 @@ class DashboardContentControlPanel extends Component
             return DashboardInfograph::where('infograph_title', 'LIKE', '%' . $search . '%')->orWhere('infograph_order', '=', $search)->orWhere('infograph_message', 'LIKE', '%' . $search . '%')->orderBy('infograph_order', 'asc')->paginate(5);
         }
     }
+
 
     public function loadModel() {
         $founded_infograph = DashboardInfograph::find($this->infograph_Target_ID);

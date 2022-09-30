@@ -5,3 +5,6 @@
 </svg> --}}
 
 <img src="{{ asset('/images/EFAST-logo.png') }}" alt="" style="width: 128px; border-radius: 50%;">
+
+
+

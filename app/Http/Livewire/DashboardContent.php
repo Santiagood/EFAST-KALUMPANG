@@ -56,10 +56,10 @@ class DashboardContent extends Component
 
     public function read($search) {
         if(empty($search)) {
-            return DashboardInfograph::orderBy('created_at', 'desc')->paginate(9);
+            return DashboardInfograph::orderBy('created_at', 'desc')->paginate(6);
         }
         else {
-            return DashboardInfograph::where('infograph_title', 'LIKE', '%' . $search . '%')->orWhere('infograph_order', '=', $search)->orWhere('infograph_message', 'LIKE', '%' . $search . '%')->orderBy('infograph_order', 'asc')->paginate(9);
+            return DashboardInfograph::where('infograph_title', 'LIKE', '%' . $search . '%')->orWhere('infograph_order', '=', $search)->orWhere('infograph_message', 'LIKE', '%' . $search . '%')->orderBy('infograph_order', 'asc')->paginate(6);
         }
     }
 

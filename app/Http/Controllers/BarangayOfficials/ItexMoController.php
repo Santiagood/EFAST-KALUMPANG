@@ -32,7 +32,7 @@ class ItexMoController extends Controller
         $level = DB::table('river_levels')
                 ->select('river_level')
                 ->orderBy('created_at', 'desc')
-                ->first()->river_level; // pareho lang po sa status, dito naman ccheck natin yung latest record at yung level ng water nya.
+                ->first()->river_level;
 
         $time = DB::table('river_levels')
                 ->select('time')
@@ -44,10 +44,12 @@ class ItexMoController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->first()->date;
 
+        $formattedDate  = \Carbon\Carbon::parse($date)->format('M. d, Y');
+
         $message = str_replace("@river-status@", $status,
                    str_replace("@river-level@", $level,
                    str_replace("@river-time@", $time,
-                   str_replace("@river-date@", $date, $Message))));
+                   str_replace("@river-date@", $formattedDate, $Message))));
 
         $ch = curl_init();
         $itexmo = array('Email'=>$email, 'Password'=>$passwd, 'ApiCode'=>$apicode, 'Recipients'=>$number, 'Message'=>$message);
@@ -59,8 +61,9 @@ class ItexMoController extends Controller
         $output = curl_exec($ch);
         curl_close ($ch);
         $output = \json_decode($output);
+        $isError = $output->Error;
 
-        if($output->Error) {
+        if($isError) {
             $this->Status = 'Failed';
             $this->Status_Message = $output->Message;
         }

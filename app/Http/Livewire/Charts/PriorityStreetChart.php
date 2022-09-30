@@ -29,7 +29,7 @@ class PriorityStreetChart extends Component
             return $priority_pie->addSlice($Priority_Name, $Priority, '#90cdf4');
 
         }, LivewireCharts::pieChartModel()
-            ->setTitle('Kalumpang Street Priority')
+            // ->setTitle('Kalumpang Street Priority')
             ->setAnimated(true)
             ->setType('pie')
             ->withLegend()
@@ -51,7 +51,7 @@ class PriorityStreetChart extends Component
             return $resident_street_pie->addSlice($StreetName, $NumberOfResidents, '#90cdf4');
 
         }, LivewireCharts::pieChartModel()
-            ->setTitle('Residents Per Street')
+            // ->setTitle('Residents Per Street')
             ->setAnimated(true)
             ->setType('pie')
             ->withLegend()
@@ -71,7 +71,7 @@ class PriorityStreetChart extends Component
                 return $registeredAs_column->addColumn($Me, $Count, '#90cdf4');
 
             }, LivewireCharts::columnChartModel()
-                ->setTitle('Registered Identified As')
+                // ->setTitle('Registered Identified As')
                 ->setAnimated(true)
                 ->setDataLabelsEnabled(true)
                 ->withLegend()

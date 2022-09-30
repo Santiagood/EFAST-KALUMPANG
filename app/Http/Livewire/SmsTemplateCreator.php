@@ -182,8 +182,6 @@ class SmsTemplateCreator extends Component
      */
     public function read($search) {
         // return smsTemplate::paginate(3);
-
-
         if(empty($search)) {
             return smsTemplate::paginate(5);
         }

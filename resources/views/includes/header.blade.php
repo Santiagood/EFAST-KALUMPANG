@@ -1,4 +1,4 @@
-<header class="bg-gray-900 rounded-b-lg">
+<header class="bg-gray-900 py-3">
     <div class="flex items-center h-16 max-w-screen-xl gap-8 px-4 mx-auto sm:px-6 lg:px-8">
         <a class="block text-teal-300" href="{{ route('homepage') }}">
             <span class="sr-only">Home</span>

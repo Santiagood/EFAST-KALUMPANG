@@ -11,11 +11,14 @@
                 @livewire('dashboard-content')
             </div>
             @if(auth()->user()->roles_id != 2)
-            <x-jet-section-border />
             <div class="p-2 overflow-hidden shadow-xl hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 sm:rounded-lg">
                 @livewire('dashboard-content-control-panel')
             </div>
             @endif
+            <x-jet-section-border />
+            <div class="p-2 overflow-hidden shadow-xl hover:bg-gradient-to-r from-red-400 hover:to-yellow-200 sm:rounded-lg">
+                @livewire('twitter-news')
+            </div>
         </div>
     </div>
 </x-app-layout>

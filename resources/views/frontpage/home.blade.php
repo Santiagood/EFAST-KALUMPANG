@@ -3,8 +3,74 @@
 @section('contents')
 
 
+<section class="text-white bg-gray-900">
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:h-fit lg:items-center">
+        <div class="text-center mr-auto place-self-center lg:col-span-7">
+            <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+                EFAST-Kalumpang.
+                <span class="text-lg inline-block md:text-2xl sm:block"> A Flood Alarm System for Kalumpang </span>
+            </h1>
+            <p class="max-w-xl mx-auto mt-4  sm:leading-relaxed sm:text-lg">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
+                tenetur fuga ducimus numquam ea!
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a class="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring" href="{{ route('register') }}">
+                    Get Started
+                </a>
+                <a class="block w-full px-12 py-3 text-sm font-medium text-white border border-blue-600 rounded sm:w-auto hover:bg-blue-600 active:bg-blue-500 focus:outline-none focus:ring" href="{{ route('about-us') }}" >
+                    Learn More
+                </a>
+            </div>
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="{{ asset('images/flooding.png') }}" alt="mockup">
+        </div>
+    </div>
+</section>
+
+<section class="text-white bg-gray-900">
+    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+        <div class="font-light text-white sm:text-lg">
+            <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-white">We didn't reinvent the wheel</h2>
+            <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
+            <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-8">
+            <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
+            <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+        </div>
+    </div>
+</section>
+
+
+{{-- <section class="text-white bg-gray-900">
+    <div class="max-w-screen-xl px-4 py-20 mx-auto lg:h-screen lg:items-center lg:flex">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+                EFAST-Kalumpang.
+                <span class="text-lg inline-block md:text-2xl sm:block"> A Flood Alarm System for Kalumpang </span>
+            </h1>
+
+            <p class="max-w-xl mx-auto mt-4 sm:leading-relaxed sm:text-xl">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
+                tenetur fuga ducimus numquam ea!
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a class="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring" href="{{ route('register') }}">
+                Get Started
+                </a>
+                <a class="block w-full px-12 py-3 text-sm font-medium text-white border border-blue-600 rounded sm:w-auto hover:bg-blue-600 active:bg-blue-500 focus:outline-none focus:ring" href="{{ route('about-us') }}" >
+                Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
 {{-- Home --}}
-<section class="text-gray-600 body-font">
+{{-- <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col flex-wrap items-center w-full mb-20 text-center">
         <h1 class="mb-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font">Welcome to EFAST-Kalumpang</h1>
@@ -87,11 +153,230 @@
         </a>
     </button>
     </div>
+  </section> --}}
+
+
+  <section class="text-white bg-gray-900">
+    <div class="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="max-w-xl">
+        <h2 class="text-3xl font-bold sm:text-4xl">What makes us special</h2>
+
+        <p class="mt-4 text-gray-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+          dolores iure fugit totam iste obcaecati. Consequatur ipsa quod ipsum
+          sequi culpa delectus, cumque id tenetur quibusdam, quos fuga minima.
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 gap-8 mt-8 md:gap-12 md:mt-16 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <div class="flex items-start">
+          <span class="flex-shrink-0 p-4 bg-gray-800 rounded-lg">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              ></path>
+            </svg>
+          </span>
+
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Lorem, ipsum dolor.</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              cumque tempore est ab possimus quisquam reiciendis tempora animi!
+              Quaerat, saepe?
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <span class="flex-shrink-0 p-4 bg-gray-800 rounded-lg">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              ></path>
+            </svg>
+          </span>
+
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Lorem, ipsum dolor.</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              cumque tempore est ab possimus quisquam reiciendis tempora animi!
+              Quaerat, saepe?
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <span class="flex-shrink-0 p-4 bg-gray-800 rounded-lg">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              ></path>
+            </svg>
+          </span>
+
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Lorem, ipsum dolor.</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              cumque tempore est ab possimus quisquam reiciendis tempora animi!
+              Quaerat, saepe?
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <span class="flex-shrink-0 p-4 bg-gray-800 rounded-lg">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              ></path>
+            </svg>
+          </span>
+
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Lorem, ipsum dolor.</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              cumque tempore est ab possimus quisquam reiciendis tempora animi!
+              Quaerat, saepe?
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <span class="flex-shrink-0 p-4 bg-gray-800 rounded-lg">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              ></path>
+            </svg>
+          </span>
+
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Lorem, ipsum dolor.</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              cumque tempore est ab possimus quisquam reiciendis tempora animi!
+              Quaerat, saepe?
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <span class="flex-shrink-0 p-4 bg-gray-800 rounded-lg">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              ></path>
+            </svg>
+          </span>
+
+          <div class="ml-4">
+            <h2 class="text-lg font-bold">Lorem, ipsum dolor.</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              cumque tempore est ab possimus quisquam reiciendis tempora animi!
+              Quaerat, saepe?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 
+
+
 {{-- system features --}}
-<section class="text-gray-600 body-font">
+{{-- <section class="text-gray-600 body-font">
     <div class="flex flex-col w-full text-center">
         <h1 class="mb-4 text-2xl font-medium text-gray-900 title-font">EFAST System Feature</h1>
         <p class="mx-auto text-base leading-relaxed lg:w-2/3">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
@@ -173,6 +458,6 @@
         <img class="object-cover object-center mt-12 rounded-lg lg:w-3/5 md:w-1/2 md:mt-0" src="https://linkwisetech.com/wp-content/uploads/2020/03/near-river.png" alt="step">
       </div>
     </div>
-  </section>
+  </section> --}}
 
 @endsection
