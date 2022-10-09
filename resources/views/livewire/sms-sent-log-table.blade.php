@@ -33,7 +33,7 @@
                 @foreach ($SentMessagelogs as $sms_log)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <td class="px-2 py-2">
-                            {{ Illuminate\Support\Str::limit($sms_log -> Sent_Message, 82) }}
+                            {{ Illuminate\Support\Str::limit($sms_log -> Sent_Message, 220) }}
                         </td>
                         <td class="px-2 py-2">
                             {{ $sms_log -> Sent_Sender }}

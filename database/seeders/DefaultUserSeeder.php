@@ -19,7 +19,7 @@ class DefaultUserSeeder extends Seeder
     {
         User::create([
             'name' => 'EfastDevelopers',
-            'email' => 'EfastKalumpang@gmail.com',
+            'email' => 'efastkalumpang@gmail.com',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('CesoWccEfast@2022'),
             'birthday' => '2022-10-09',
