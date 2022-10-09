@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\SentMessageLog;
 use Database\Seeders\RiverLevelSeeder;
+use Database\Seeders\DefaultUserSeeder;
 use Database\Seeders\SmsTemplateSeeder;
 use Database\Seeders\KalumpangStreetSeeder;
 use Database\Seeders\ResidentCategorySeeder;
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
+            DefaultUserSeeder::class,
             RoleSeeder::class,
             KalumpangStreetSeeder::class,
             ResidentCategorySeeder::class,

@@ -52,9 +52,12 @@
         @endif
 
         <div class="flex items-center mt-5">
-            <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
+            {{-- <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
                 {{ __('Log Out Other Browser Sessions') }}
-            </x-jet-button>
+            </x-jet-button> --}}
+            <button wire:click="confirmLogout" wire:loading.attr="disabled" type="submmit" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                {{ __('Log Out Other Browser Sessions') }}
+            </button>
 
             <x-jet-action-message class="ml-3" on="loggedOut">
                 {{ __('Done.') }}
@@ -82,15 +85,19 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-jet-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
+                <x-jet-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     {{ __('Cancel') }}
                 </x-jet-secondary-button>
+                {{-- <button type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Red to Yellow</button> --}}
 
-                <x-jet-button class="ml-3"
+                <x-jet-button class="ml-3 text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm  text-center"
                             wire:click="logoutOtherBrowserSessions"
                             wire:loading.attr="disabled">
                     {{ __('Log Out Other Browser Sessions') }}
                 </x-jet-button>
+                {{-- <button type="button" class="ml-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" wire:click="logoutOtherBrowserSessions" wire:loading.attr="disabled">
+                    {{ __('Log Out Other Browser Sessions') }}
+                </button> --}}
             </x-slot>
         </x-jet-dialog-modal>
     </x-slot>

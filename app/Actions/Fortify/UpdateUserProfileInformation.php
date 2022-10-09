@@ -24,6 +24,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
             'mobile_number' => ['required', 'string', 'min: 11', 'max: 11',],
             'address' => ['required', 'string'],
+            'birthday' => ['required'],
+            'gender' => ['required'],
+            'registerMeAs' => ['required'],
+
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
@@ -39,6 +43,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'email' => $input['email'],
                 'mobile_number' => $input['mobile_number'],
                 'address' => $input['address'],
+                'birthday' => $input['birthday'],
+                'gender' => $input['gender'],
+                'registerMeAs' => $input['registerMeAs'],
             ])->save();
         }
     }
@@ -57,6 +64,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email' => $input['email'],
             'mobile_number' => $input['mobile_number'],
             'address' => $input['address'],
+            'birthday' => $input['birthday'],
+            'gender' => $input['gender'],
+            'registerMeAs' => $input['registerMeAs'],
             'email_verified_at' => null,
         ])->save();
 

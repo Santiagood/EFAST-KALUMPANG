@@ -2,10 +2,10 @@
     <p class="font-bold text-center">Resident Account Control</p>
     <div class="grid grid-flow-col-dense gap-4 sm:flex-nowrap">
         <div class="col-span-2">
-            <x-jet-input id="search" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" wire:model.debounce.800ms="search" placeholder="Search a user..." />
+            <x-jet-input id="search" class="w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" wire:model.debounce.800ms="search" placeholder="Search a user Name|Address|Gender|Category|Mobile number" />
         </div>
         <div class="col-span-1 justify-self-end">
-            <button wire:click='createShowModal' type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button wire:click='createShowModal' type="submit" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                 {{ __('New Resident') }}
             </button>
         </div>
@@ -58,7 +58,7 @@
                         </td>
                         <td class="px-2 py-2 text-center">
                             @if ($Account -> email == null)
-                                <span class="inline-block px-2 py-1 py-2 mr-1 text-xs font-semibold text-gray-600 uppercase bg-gray-200 rounded-full last:mr-0">
+                                <span class="inline-block px-2 py-2 mr-1 text-xs font-semibold text-gray-600 uppercase bg-gray-200 rounded-full last:mr-0">
                                     created manually
                                 </span>
                             @else
@@ -95,11 +95,11 @@
                             @endif
                         </td>
                         <td class="px-2 py-2 text-center md:whitespace-nowrap">
-                            <button wire:click='updateShowModal( {{ $Account -> id }})' type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            <button wire:click='updateShowModal( {{ $Account -> id }})' type="submit" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                                 {{ __('Update') }}
                             </button>
 
-                            <button wire:click='deleteShowModal({{ $Account -> id }})' type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            <button wire:click='deleteShowModal({{ $Account -> id }})' type="submit" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                                 {{ __('Delete') }}
                             </button>
                         </td>
@@ -194,11 +194,11 @@
         </x-slot>
 
         <x-slot name="footer">
-            <button wire:click="$toggle('modalCreateVisible')" wire:loading.attr="disabled" type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button wire:click="$toggle('modalCreateVisible')" wire:loading.attr="disabled" type="submit" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                 {{ __('Cancel') }}
             </button>
 
-            <button wire:click="create" wire:loading.attr="disabled" type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button wire:click="create" wire:loading.attr="disabled" type="submit" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                 {{ __('Create Account') }}
             </button>
         </x-slot>
@@ -235,7 +235,37 @@
                 </select>
                 @error('Residents_Address')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
             </div>
-            
+
+            <div class="mt-4">
+                <x-jet-label for="Residents_registerMeAs" value="{{ __('Resident Register as') }}" />
+                <select id="Residents_registerMeAs" wire:model.debounce.800ms="Residents_registerMeAs" name="Residents_registerMeAs" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                    <option value="">Select Category</option>
+                    @foreach (\App\Models\residentCategory::all(); as $Category)
+                        <option value="{{ $Category->category }}">{{ $Category->category }}</option>
+                    @endforeach
+                </select>
+                @error('Residents_registerMeAs')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="Residents_Gender" value="{{ __('Resident Gender') }}" />
+                <select id="Residents_Gender" name="Residents_Gender" wire:model.debounce.800ms="Residents_Gender" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="I Prefer Not To Say">I prefer not to say</option>
+                </select>
+                @error('Residents_Gender')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="Residents_Birthday" value="{{ __('Resident Birthday') }}" />
+                <x-jet-input id="Residents_Birthday" name="Residents_Birthday" wire:model.debounce.800ms="Residents_Birthday" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" name="birthday" :value="old('birthday')" placeholder="" required />
+                @error('Residents_Birthday')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+            </div>
+
+
+
             @if ($Residents_Email != null)
                 <div class="mt-4">
                     <x-jet-label for="Residents_Roles_ID" value="{{ __('Resident Role') }}" />
@@ -252,10 +282,10 @@
         </x-slot>
 
         <x-slot name="footer">
-            <button wire:click="$toggle('modalUpdateVisible')" wire:loading.attr="disabled" type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button wire:click="$toggle('modalUpdateVisible')" wire:loading.attr="disabled" type="submit" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                 {{ __('Cancel') }}
             </button>
-            <button wire:click="update" wire:loading.attr="disabled" type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button wire:click="update" wire:loading.attr="disabled" type="submit" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                 {{ __('Update') }}
             </button>
         </x-slot>
@@ -275,11 +305,11 @@
 
         <x-slot name="footer">
 
-            <button wire:click="$toggle('modalDeleteVisible')" wire:loading.attr="disabled" type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button wire:click="$toggle('modalDeleteVisible')" wire:loading.attr="disabled" type="submit" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                 {{ __('Cancel') }}
             </button>
 
-            <button wire:click="delete" wire:loading.attr="disabled" type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            <button wire:click="delete" wire:loading.attr="disabled" type="submit" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                 {{ __('Delete') }}
             </button>
         </x-slot>

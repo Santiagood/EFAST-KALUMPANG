@@ -38,12 +38,12 @@
                     </span>
                 </div>
 
-                <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                <x-jet-secondary-button class="mt-2 mr-2" type="submit" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Select A New Photo') }}
                 </x-jet-secondary-button>
 
                 @if ($this->user->profile_photo_path)
-                    <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
+                    <x-jet-secondary-button type="submit" class="mt-2" wire:click="deleteProfilePhoto">
                         {{ __('Remove Photo') }}
                     </x-jet-secondary-button>
                 @endif
@@ -69,7 +69,7 @@
                 <p class="mt-2 text-sm">
                     {{ __('Your email address is unverified.') }}
 
-                    <button type="button" class="text-sm text-gray-600 underline hover:text-gray-900" wire:click.prevent="sendEmailVerification">
+                    <button type="submit" class="text-sm text-gray-600 underline hover:text-gray-900" wire:click.prevent="sendEmailVerification">
                         {{ __('Click here to re-send the verification email.') }}
                     </button>
                 </p>
@@ -92,14 +92,46 @@
         <!-- address -->
         <div class="cols-span-6 sm:col-span-4">
             <x-jet-label for="address" value="{{ __('Address') }}" />
-            <select id="address" wire:model.debounce.800ms="state.address" name="Residents_Address" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" autocomplete="address" required>
+            <select id="address" wire:model.debounce.800ms="state.address" name="address" class="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" autocomplete="address" required>
                 <option value="">Select Street</option>
                 @foreach (\App\Models\KalumpangStreet::all(); as $street)
                     <option value="{{ $street->Street_name }}">{{ $street->Street_name }}</option>
                 @endforeach
             </select>
-            @error('Residents_Address')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+            @error('address')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
         </div>
+
+        <!-- categories -->
+        <div class="cols-span-6 sm:col-span-4">
+            <x-jet-label for="registerMeAs" value="{{ __('Registered As') }}" />
+            <select id="registerMeAs" wire:model.debounce.800ms="state.registerMeAs" name="registerMeAs" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" autocomplete="registerMeAs" required>
+                <option value="">Select Category</option>
+                @foreach (\App\Models\residentCategory::all(); as $Category)
+                    <option value="{{ $Category->category }}">{{ $Category->category }}</option>
+                @endforeach
+            </select>
+            @error('registerMeAs')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+        </div>
+
+        <!-- birthday -->
+        <div class="cols-span-6 sm:col-span-4">
+            <x-jet-label for="birthday" value="{{ __('Birthday') }}" />
+            <x-jet-input id="birthday" wire:model.debounce.800ms="state.birthday" name="birthday" autocomplete="birthday" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" required />
+            @error('birthday')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+        </div>
+
+        <!-- gender -->
+        <div class="cols-span-6 sm:col-span-4">
+            <x-jet-label for="gender" value="{{ __('Gender') }}" />
+            <select id="gender" name="gender" wire:model.debounce.800ms="state.gender" autocomplete="gender" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required />
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="I Prefer Not To Say">I prefer not to say</option>
+            </select>
+            @error('gender')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
+        </div>
+
 
     </x-slot>
 
@@ -108,8 +140,11 @@
             {{ __('Saved.') }}
         </x-jet-action-message>
 
-        <x-jet-button wire:loading.attr="disabled" wire:target="photo">
+        {{-- <x-jet-button wire:loading.attr="disabled" wire:target="photo">
             {{ __('Save') }}
-        </x-jet-button>
+        </x-jet-button> --}}
+        <button wire:loading.attr="disabled" wire:target="photo" type="submit" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+            {{ __('Save') }}
+        </button>
     </x-slot>
 </x-jet-form-section>

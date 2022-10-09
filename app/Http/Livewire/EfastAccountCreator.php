@@ -58,12 +58,13 @@ class EfastAccountCreator extends Component
     /* ******************RULES******************** */
     public function rules() {
         return [
-            'Residents_Name' => 'required',
-            'Residents_Gender' => 'required',
+            'Residents_Name' => ['required'],
+            'Residents_Gender' => ['required'],
             'Residents_Mobile_Number' => ['required', 'min: 11', 'max: 11', Rule::unique('users', 'mobile_number')->ignore($this->Resident_Target_ID)],
-            'Residents_Address' => 'required',
+            'Residents_Address' => ['required'],
             'Residents_Roles_ID' => ['required', 'numeric', 'min: 1', 'max: 2'],
             'Residents_Birthday' => ['required', 'date'],
+            'Residents_registerMeAs' => ['required'],
         ];
     }
 
@@ -137,7 +138,7 @@ class EfastAccountCreator extends Component
             return User::where('isVerified', '=', true)
             ->where('name', 'LIKE', '%' . $search . '%')
             ->orWhere('mobile_number', '=', $search)
-            ->orWhere('registerMeAs','=', $search)
+            ->orWhere('registerMeAs', 'LIKE', '%' . $search . '%')
             ->orWhere('gender', '=', $search)
             ->orWhere('address', 'LIKE', '%' . $search . '%')
             ->orderBy('name', 'asc')->paginate(5);

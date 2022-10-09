@@ -10,17 +10,24 @@ use Asantibanez\LivewireCharts\Facades\LivewireCharts;
 
 class DailyMonitoring extends Component
 {
+    public $day;
+
+    protected $listeners = ['refreshDailyChart' => 'render'];
+
+    public function dayChange() {
+        $this->emitUp('refreshDailyChart');
+    }
 
     public function render()
     {
-        $today = 0;
-        $yesterday = 1;
+        $this->emitUp('refreshDailyChart');
 
         $data = DB::table('river_levels')
-            ->where('date', '=', now()->subDays($today)->timezone('Asia/Manila')->format('Y-m-d'))
-            ->orderBy('created_at','asc')
-            ->select('river_level', 'time')
-            ->get();
+        ->where('date', '=', $this->day)
+        ->orderBy('created_at','asc')
+        ->select('river_level', 'time')
+        ->get();
+
 
         $daily_area = $data->groupBy('time')
                 ->reduce(function ($daily_area, $river) use ($data) {

@@ -15,6 +15,6 @@ class smsTemplate extends Model
         'SMS_Template_Title',
         'SMS_Template_Message',
         'SMS_Template_Author',
-        'IsDefault',
+        'SMS_Template_IsDefault',
     ];
 }

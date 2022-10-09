@@ -19,5 +19,6 @@ class RiverLevel extends Model
         'day',
         'time',
         'date',
+        'isReported',
     ];
 }

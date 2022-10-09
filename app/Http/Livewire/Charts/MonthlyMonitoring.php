@@ -10,9 +10,18 @@ use Asantibanez\LivewireCharts\Facades\LivewireCharts;
 
 class MonthlyMonitoring extends Component
 {
+    public $year;
+
+    protected $listeners = ['refreshMonthlyChart' => 'render'];
+
+    public function yearChange() {
+        $this->emitUp('refreshMonthlyChart');
+    }
+
     public function render()
     {
-        $data = DB::table('river_levels')->where('year','=',now()->year)->orderby('created_at','asc')->select('month', 'river_level')->get();
+        // $data = DB::table('river_levels')->where('year','=',now()->year)->orderby('created_at','asc')->select('month', 'river_level')->get();
+        $data = DB::table('river_levels')->where('year','=', $this->year)->orderby('created_at','asc')->select('month', 'river_level')->get();
 
         $monthly_column = $data->groupBy('month')
             ->reduce(function ($monthly_column, $riverLevel) {

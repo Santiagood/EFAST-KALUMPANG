@@ -51,8 +51,10 @@ class ItexMoController extends Controller
                    str_replace("@river-time@", $time,
                    str_replace("@river-date@", $formattedDate, $Message))));
 
+        $senderID = 'EFAST-Kalumpang';
+
         $ch = curl_init();
-        $itexmo = array('Email'=>$email, 'Password'=>$passwd, 'ApiCode'=>$apicode, 'Recipients'=>$number, 'Message'=>$message);
+        $itexmo = array('Email'=>$email, 'Password'=>$passwd, 'ApiCode'=>$apicode, 'Recipients'=>$number, 'Message'=>$message, 'SenderId'=>$senderID);
 
         curl_setopt($ch, CURLOPT_URL,"https://api.itexmo.com/api/broadcast");
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -71,7 +73,7 @@ class ItexMoController extends Controller
             $this->Status = 'Success';
             $this->Status_Message = $output->Message;
         }
-        // dd($itexmo);
+
     }
 
     public function saveToSentMessageLogTable() {
@@ -88,7 +90,7 @@ class ItexMoController extends Controller
         $this->Sender = Auth::user()->name;
         $this->Message = $request->message;
 
-        User::where('isVerified', '=', 1)->chunk(3, function($residents) {
+        User::where('isVerified', '=', 1)->chunk(200, function($residents) {
             foreach ($residents as $resident) {
                 $ChunkOfResidentsNumber[] = $resident->mobile_number;
             }

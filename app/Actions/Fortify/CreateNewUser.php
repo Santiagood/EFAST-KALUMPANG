@@ -34,8 +34,6 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        // dd($input['id_picture']->guessExtension());
-
         $newImageName = time() . '-' . $input['mobile_number'] . '.' . $input['id_picture']->guessExtension();
 
         $input['id_picture']->move(public_path('id_pictures'), $newImageName);

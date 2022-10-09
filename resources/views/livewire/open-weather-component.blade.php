@@ -1,7 +1,6 @@
-<div class="w-full max-w-full p-3 bg-white border border-gray-200 rounded-lg shadow-md sm:p-2 md:p-4 dark:bg-gray-800 dark:border-gray-700">
-    <div class="text-center" wire:poll.30000ms>
-        <div><span class="font-bold">TODAY:</span> {{ now()->timezone('Asia/Manila')->toDayDateTimeString() }}</div>
-        <button wire:click="refreshWeather" type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm p-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><img class="max-h-3" src="{{ asset('images/refresh.png') }}" alt=""></button>
+<div wire:poll.10000ms="refreshWeather" class="w-full max-w-full p-3 bg-white border border-gray-200 rounded-lg shadow-md sm:p-2 md:p-4 dark:bg-gray-800 dark:border-gray-700">
+    <div>
+        <div class="text-center"><span class="font-bold">TODAY:</span> {{ now()->timezone('Asia/Manila')->toDayDateTimeString() }}</div>
     </div>
 
     <div class="m-4 grid gap-5 sm:grid-cols-3 mx-auto max-w-screen-lg">

@@ -60,10 +60,10 @@ class CategoriesControlPanel extends Component
 
     public function read($search) {
         if(empty($search)) {
-            return residentCategory::orderBy('created_at', 'asc')->paginate(3);
+            return residentCategory::orderBy('created_at', 'asc')->paginate(5);
         }
         else {
-            return residentCategory::where('category', 'LIKE', '%' . $search . '%')->orWhere('category_description', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'asc')->paginate(3);
+            return residentCategory::where('category', 'LIKE', '%' . $search . '%')->orWhere('category_description', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'asc')->paginate(5);
         }
     }
 

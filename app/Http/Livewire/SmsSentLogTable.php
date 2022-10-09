@@ -13,10 +13,10 @@ class SmsSentLogTable extends Component
 
     public function read($search) {
         if(empty($search)) {
-            return SentMessageLog::orderBy('created_at', 'desc')->paginate(3);
+            return SentMessageLog::orderBy('created_at', 'desc')->paginate(5);
         }
         else {
-            return SentMessageLog::where('Sent_Message', 'LIKE', '%' . $search . '%')->orWhere('Sent_Sender', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(3);
+            return SentMessageLog::where('Sent_Message', 'LIKE', '%' . $search . '%')->orWhere('Sent_Sender', 'LIKE', '%' . $search . '%')->orWhere('Sent_Status', 'LIKE', '%' . $search . '%')->orWhere('Sent_Status_Message', 'LIKE', '%' . $search . '%')->orderBy('created_at', 'desc')->paginate(5);
         }
     }
 

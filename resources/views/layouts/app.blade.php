@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Efast-Kalumpang') }}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/EFAST-logo-modified.png') }}">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -36,7 +37,13 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+
+                <div id="fb-root"></div>
+                <!-- Your Chat Plugin code -->
+                <div id="fb-customer-chat" class="fb-customerchat">
+                </div>
             </main>
+
         </div>
 
 
@@ -47,5 +54,31 @@
         {{-- @powerGridScripts --}}
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script src="../path/to/flowbite/dist/flowbite.js"></script>
+        <!-- Messenger Chat Plugin Code -->
+
+
+        <script>
+            var chatbox = document.getElementById('fb-customer-chat');
+            chatbox.setAttribute("page_id", "102680989277303");
+            chatbox.setAttribute("attribution", "biz_inbox");
+        </script>
+
+        <!-- Your SDK code -->
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                xfbml            : true,
+                version          : 'v15.0'
+                });
+            };
+
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
     </body>
 </html>

@@ -186,7 +186,7 @@ class SmsTemplateCreator extends Component
             return smsTemplate::paginate(5);
         }
         else {
-            return smsTemplate::where('SMS_Template_Message', 'LIKE', '%' . $search . '%')->orWhere('SMS_Template_Title', 'LIKE', '%' . $search . '%')->paginate(5);
+            return smsTemplate::where('SMS_Template_Message', 'LIKE', '%' . $search . '%')->orWhere('SMS_Template_Title', 'LIKE', '%' . $search . '%')->orWhere('SMS_Template_Author', 'LIKE', '%' . $search . '%')->paginate(5);
         }
     }
 
