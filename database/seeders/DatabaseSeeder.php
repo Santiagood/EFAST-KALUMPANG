@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-            DefaultUserSeeder::class,
             RoleSeeder::class,
+            DefaultUserSeeder::class,
             KalumpangStreetSeeder::class,
             ResidentCategorySeeder::class,
             SmsTemplateSeeder::class,
