@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
+use Database\Seeders\WeatherSeeder;
 use Database\Seeders\SentMessageLog;
 use Database\Seeders\RiverLevelSeeder;
 use Database\Seeders\DefaultUserSeeder;
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
             KalumpangStreetSeeder::class,
             ResidentCategorySeeder::class,
             SmsTemplateSeeder::class,
+            WeatherSeeder::class,
             // SentMessageLogSeeder::class,
             // RiverLevelSeeder::class,
         ]);
