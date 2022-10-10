@@ -121,7 +121,7 @@ class RiverLevelCheckerSchedule extends Command
                    str_replace("@river-time@", $time,
                    str_replace("@river-date@", $formattedDate, $Message))));
 
-        $senderID = 'EFAST-Kalumpang';
+        $senderID = 'VIA ITEXMO';
 
         $ch = curl_init();
 
@@ -142,7 +142,7 @@ class RiverLevelCheckerSchedule extends Command
         }
         else {
             $this->Status = 'Success';
-            $this->Status_Message = $output->Message;
+            $this->Status_Message = $output->ReferenceId;
 
         }
 

@@ -34,12 +34,19 @@
     <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div class="font-light text-white sm:text-lg">
             <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-white">We didn't reinvent the wheel</h2>
-            <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-            <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+            <p class="mb-4">
+                EFAST is not a new concept; similar systems like EFAST exist in other nations, including the United States. This type of system has been tried and tested,
+                and some of them can already be found in Marikina. The main advantage of EFAST is that locals may use the resources that barangay authorities have made available
+                to them, such as real-time river level monitoring.
+            </p>
+            <p>
+                Another characteristic that distinguishes EFAST is the flexibility for future versions to introduce new functionality
+                and features while incorporating community ideas.
+            </p>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-8">
-            <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
-            <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
+            <img class="w-full h-44 sm:h-80 rounded-lg" src="{{ asset('images/EFAST Software.png') }}" alt="Efast Hardware">
+            <img class="mt-4 w-full h-44 sm:h-80 object-cover object-center lg:mt-10 rounded-lg" src="{{ asset('images/EFAST Hardware.jpg') }}" alt="Efast Software">
         </div>
     </div>
 </section>

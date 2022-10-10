@@ -51,7 +51,7 @@ class ItexMoController extends Controller
                    str_replace("@river-time@", $time,
                    str_replace("@river-date@", $formattedDate, $Message))));
 
-        $senderID = 'EFAST-Kalumpang';
+        $senderID = 'VIA ITEXMO';
 
         $ch = curl_init();
         $itexmo = array('Email'=>$email, 'Password'=>$passwd, 'ApiCode'=>$apicode, 'Recipients'=>$number, 'Message'=>$message, 'SenderId'=>$senderID);
@@ -71,7 +71,7 @@ class ItexMoController extends Controller
         }
         else {
             $this->Status = 'Success';
-            $this->Status_Message = $output->Message;
+            $this->Status_Message = $output->ReferenceId;
         }
 
     }
