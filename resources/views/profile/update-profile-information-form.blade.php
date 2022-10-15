@@ -90,9 +90,9 @@
         </div>
 
         <!-- address -->
-        <div class="cols-span-6 sm:col-span-4">
+        <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="address" value="{{ __('Address') }}" />
-            <select id="address" wire:model.debounce.800ms="state.address" name="address" class="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" autocomplete="address" required>
+            <select id="address" wire:model.debounce.800ms="state.address" name="address" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" autocomplete="address" required>
                 <option value="">Select Street</option>
                 @foreach (\App\Models\KalumpangStreet::all(); as $street)
                     <option value="{{ $street->Street_name }}">{{ $street->Street_name }}</option>
@@ -102,9 +102,9 @@
         </div>
 
         <!-- categories -->
-        <div class="cols-span-6 sm:col-span-4">
+        <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="registerMeAs" value="{{ __('Registered As') }}" />
-            <select id="registerMeAs" wire:model.debounce.800ms="state.registerMeAs" name="registerMeAs" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" autocomplete="registerMeAs" required>
+            <select id="registerMeAs" wire:model.debounce.800ms="state.registerMeAs" name="registerMeAs" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" autocomplete="registerMeAs" required>
                 <option value="">Select Category</option>
                 @foreach (\App\Models\residentCategory::all(); as $Category)
                     <option value="{{ $Category->category }}">{{ $Category->category }}</option>
@@ -114,14 +114,14 @@
         </div>
 
         <!-- birthday -->
-        <div class="cols-span-6 sm:col-span-4">
+        <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="birthday" value="{{ __('Birthday') }}" />
             <x-jet-input id="birthday" wire:model.debounce.800ms="state.birthday" name="birthday" autocomplete="birthday" class="block w-full mt-1 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="date" required />
             @error('birthday')<span class="text-sm font-semibold text-red-500">{{ $message }}</span>@enderror
         </div>
 
         <!-- gender -->
-        <div class="cols-span-6 sm:col-span-4">
+        <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="gender" value="{{ __('Gender') }}" />
             <select id="gender" name="gender" wire:model.debounce.800ms="state.gender" autocomplete="gender" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required />
                 <option value="">Select Gender</option>
