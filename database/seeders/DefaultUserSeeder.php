@@ -21,7 +21,7 @@ class DefaultUserSeeder extends Seeder
             'name' => 'EfastDevelopers',
             'email' => 'efastkalumpang@gmail.com',
             'email_verified_at' => Carbon::now(),
-            'password' => Hash::make('CesoWccEfast@2022'),
+            'password' => Hash::make('password'),
             'birthday' => '2022-10-09',
             'gender' => 'Male',
             'mobile_number' => '09451448928',
